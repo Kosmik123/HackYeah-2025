@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5924364399830709774}
   - component: {fileID: 5364767889889855513}
   - component: {fileID: 1952570065988177851}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,16 +106,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bbce8e1827d394479fa30ad4d4a6905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  moveSpeed: 5
-  jumpStrength: 3
-  rotationSpeed: 20
-  crouchHeight: 1
-  standHeight: 2
+  moveSpeed: 3
+  jumpStrength: 1.5
+  rotationSpeed: 35
+  crouchHeight: 0.2
+  standHeight: 1.6
   crouchCenterY: 0
   standCenterY: 0
   ceilingMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 55
 --- !u!114 &5924364399830709774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +194,19 @@ MonoBehaviour:
     m_ActionId: 852140f2-7766-474d-8707-702459ba45f3
     m_ActionName: 'Player/Interact[/Keyboard/e]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6551744473957633641}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnCrouch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 27c5f898-bc57-4ee1-8800-db469aca5fe3
     m_ActionName: 'Player/Crouch[/Keyboard/c]'
   - m_PersistentCalls:
@@ -288,7 +300,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
+  m_Height: 1.6
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -307,6 +319,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01daf5dbcaa36aa4988439177bb28bab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  playerAnimator: {fileID: 0}
+  VFX: {fileID: 0}
+  FMODEventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  VFXvelocityVector: {x: 0, y: 0, z: 0}
+  VFXsecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+  miningCooldown: 3
+  damage: 1
+  animationName: 
 --- !u!1 &3821276427994330946
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,7 +346,7 @@ GameObject:
   - component: {fileID: 214226415520766574}
   - component: {fileID: 5521053014138112996}
   - component: {fileID: 2832839838239926268}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,7 +392,7 @@ MonoBehaviour:
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
-    FieldOfView: 60.000004
+    FieldOfView: 50
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -471,7 +497,7 @@ MonoBehaviour:
       Enabled: 1
       Input:
         InputAction: {fileID: -5630151704836100654, guid: 1d6e640e716dc4ff6989b73d02023f2b, type: 3}
-        Gain: -10
+        Gain: -6
         CancelDeltaTime: 0
       InputValue: 0
       Driver:
