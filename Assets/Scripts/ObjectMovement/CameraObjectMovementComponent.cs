@@ -14,6 +14,8 @@ public class CameraObjectMovementComponent : MonoBehaviour
     private bool _enable = false;
     private Vector3 _forcePoint;
 
+    public LayerMask raycastMask;
+    
     private void Start()
     {
         //StartCoroutine(MoveObjectToCameraCentre());
@@ -42,7 +44,7 @@ public class CameraObjectMovementComponent : MonoBehaviour
         Ray ray = new Ray(transform.position, (targetPoint - transform.position).normalized);
         RaycastHit hit;
         Collider col = _manipulatedObject.GetComponent<Collider>();
-        if (Physics.Raycast(ray, out hit, distanceFromCamera))
+        if (Physics.Raycast(ray, out hit, distanceFromCamera, raycastMask))
         {
             _forcePoint = hit.point;
             Debug.Log("object grabbed");

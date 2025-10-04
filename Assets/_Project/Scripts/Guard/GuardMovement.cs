@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Splines;
 
 [RequireComponent(typeof(SplineAnimate))]
-public class Guard : MonoBehaviour
+public class GuardMovement : MonoBehaviour
 {
     private static readonly int Speed1 = Animator.StringToHash("Speed");
 
