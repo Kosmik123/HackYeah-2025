@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Splines;
 
 [RequireComponent(typeof(SplineAnimate))]
-public class GuardMovement : MonoBehaviour
+public class Guard : MonoBehaviour
 {
     private static readonly int Speed1 = Animator.StringToHash("Speed");
 
@@ -14,24 +14,19 @@ public class GuardMovement : MonoBehaviour
     [SerializeField] private StudioEventEmitter footstepEmitter;
     [SerializeField] private StudioEventEmitter auraEmitter;
     [SerializeField] private SplineAnimate splineAnimate;
-    
-    [Header("Settings")]
-    [SerializeField] private float stayDuration = 3f;
 
     public float Speed { get; private set; }
-    public Action OnPathEnded { get; set; }
-    public Action OnPathStarted { get; set; }
+    public Action<Guard> OnPathEnded { get; set; }
+    public Action<Guard> OnPathStarted { get; set; }
     
     private Vector3 lastPosition;
 
-    private void Awake()
+    public async UniTask MoveAlongSpline(SplineContainer spline)
     {
-        splineAnimate.Completed += OnPathCompleted;
-    }
-
-    private void OnDestroy()
-    {
-        splineAnimate.Completed -= OnPathCompleted;
+        splineAnimate.Container = spline;
+        splineAnimate.Restart(true);
+        OnPathStarted?.Invoke(this);
+        await UniTask.WaitWhile(() => splineAnimate.IsPlaying);
     }
 
     private void Update()
@@ -56,22 +51,5 @@ public class GuardMovement : MonoBehaviour
     private void UpdateAnimator()
     {
         animator.SetFloat(Speed1, Speed);
-    }
-    
-    private async void OnPathCompleted()
-    {
-        try
-        {
-            OnPathEnded?.Invoke();
-
-            await UniTask.WaitForSeconds(stayDuration);
-        
-            splineAnimate.Restart(true);
-            OnPathStarted?.Invoke();
-        }
-        catch (Exception e)
-        {
-            Debug.LogError(e);
-        }
     }
 }

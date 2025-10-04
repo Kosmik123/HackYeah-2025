@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 3317128063175977450}
   - component: {fileID: 51344811096640865}
   - component: {fileID: 7792015389479661496}
-  - component: {fileID: 7324060139777426302}
+  - component: {fileID: 3542701255561288380}
   m_Layer: 0
   m_Name: Guard
   m_TagString: Untagged
@@ -172,14 +172,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8088203896476555747}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16dfbf3f088d8a446918cf00aabe9ad3, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d620fb07d4fda34ab1275ad127fe8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Guard
   animator: {fileID: 7383997110013764350}
   footstepEmitter: {fileID: 5783709115100888243}
   auraEmitter: {fileID: 2688395693523419667}
   splineAnimate: {fileID: 7792015389479661496}
-  stayDuration: 10
 --- !u!114 &7792015389479661496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +202,7 @@ MonoBehaviour:
   m_ObjectForwardAxis: 2
   m_ObjectUpAxis: 1
   m_StartOffset: 0
---- !u!114 &7324060139777426302
+--- !u!114 &3542701255561288380
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,25 +211,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 8088203896476555747}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0038c16c34866b4f9e25c9c0dc0f7e6, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d546fc22b8b40749bdd7a6b438b915b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Behavior::Unity.Behavior.BehaviorGraphAgent
-  m_Graph: {fileID: 5588339058098636801, guid: 4f2a91f1241af38469a5944b1fb6c8a3, type: 2}
-  m_BlackboardVariableOverridesList:
-  - rid: 519199394746073159
-  m_IsInitialised: 0
-  m_IsStarted: 0
+  m_EditorClassIdentifier: 
+  guard: {fileID: 51344811096640865}
+  behaviors:
+  - conditions:
+    - rid: 8408759374236877052
+    actions:
+    - rid: 8408759374236877056
+    - rid: 8408759374236877057
+    - rid: 8408759374236877058
+  currentActionIndex: -1
   references:
     version: 2
     RefIds:
-    - rid: 519199394746073159
-      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+    - rid: 8408759374236877052
+      type: {class: HourCondition, ns: , asm: Assembly-CSharp}
       data:
-        GUID:
-          m_Value0: 1
-          m_Value1: 0
-        Name: Self
-        m_Value: {fileID: 8088203896476555747}
+        conditionType: 0
+        hour: 2
+    - rid: 8408759374236877056
+      type: {class: MoveAction, ns: , asm: Assembly-CSharp}
+      data:
+        spline: {fileID: 0}
+    - rid: 8408759374236877057
+      type: {class: WaitAction, ns: , asm: Assembly-CSharp}
+      data:
+        waitTime: 3
+    - rid: 8408759374236877058
+      type: {class: MoveAction, ns: , asm: Assembly-CSharp}
+      data:
+        spline: {fileID: 0}
 --- !u!1001 &3613538260711784248
 PrefabInstance:
   m_ObjectHideFlags: 0

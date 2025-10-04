@@ -1,13 +1,38 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class GuardAction
-{ }
-
-[CreateAssetMenu(menuName = "HackYeah2025/Guard/Behavior", order = 1)]
-public class GuardBehavior : ScriptableObject
+[System.Serializable]   
+public class GuardBehavior
 {
+    public event System.Action<GuardBehavior> OnFinished;
+
+    [SerializeReference, SubclassSelector]
+    private GuardEventCondition[] conditions;
+
     [SerializeReference, SubclassSelector]
     private GuardAction[] actions;
-    public IReadOnlyList<GuardAction> Actions => actions;
+
+    public bool AreConditionsMet()
+    {
+        foreach (var condition in conditions)
+            if (condition.IsMet() == false)
+                return false;
+
+        return true;
+    }
+
+    public async void StartEvent(Guard guard)
+    {
+        foreach (var action in actions)
+            await action.Execute(guard);
+        guard.OnPathEnded += Guard_OnPathEnded;
+    }
+
+
+    private void Guard_OnPathEnded(Guard guard)
+    {
+        guard.OnPathEnded -= Guard_OnPathEnded;
+        OnFinished?.Invoke(this);
+    }
 }
+
+
