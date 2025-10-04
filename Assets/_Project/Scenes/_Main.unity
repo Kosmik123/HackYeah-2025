@@ -329,7 +329,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1861,7 +1861,7 @@ PrefabInstance:
       objectReference: {fileID: 7025612}
     - target: {fileID: 937479970351535967, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.654
+      value: 1.521
       objectReference: {fileID: 0}
     - target: {fileID: 1004470424746237940, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
       propertyPath: m_Mesh
@@ -1869,11 +1869,11 @@ PrefabInstance:
       objectReference: {fileID: 239191593}
     - target: {fileID: 1028567501144364095, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.601
+      value: -1.737
       objectReference: {fileID: 0}
     - target: {fileID: 1028567501144364095, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.637
+      value: -2.645
       objectReference: {fileID: 0}
     - target: {fileID: 1117826853484120359, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
       propertyPath: m_Mesh
@@ -1999,6 +1999,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1238925709}
+    - target: {fileID: 5728145867474119213, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.894
+      objectReference: {fileID: 0}
     - target: {fileID: 5807128243098793332, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
       propertyPath: m_Mesh
       value: 
