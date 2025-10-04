@@ -10,6 +10,8 @@ public class UISystem : MonoBehaviour
     [SerializeField] private TMP_Text tooltip;
     [SerializeField] private TMP_Text dialogue;
     [SerializeField] private StudioEventEmitter dialogueSoundEmitter;
+
+    public bool DialogueStopped { get; set; } = true;
     
     public void ShowTooltip(string message)
     {
@@ -27,6 +29,7 @@ public class UISystem : MonoBehaviour
     {
         try
         {
+            DialogueStopped = false;
             dialogue.gameObject.SetActive(true);
             dialogue.text = "";
         
@@ -40,6 +43,7 @@ public class UISystem : MonoBehaviour
             await UniTask.WaitForSeconds(completeDelay);
         
             dialogue.gameObject.SetActive(false);
+            DialogueStopped = true;
         }
         catch (Exception e)
         {
