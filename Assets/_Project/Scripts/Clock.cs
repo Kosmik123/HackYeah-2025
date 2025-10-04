@@ -30,6 +30,7 @@ namespace HackYeah2025
             if (arm.Transform == null)
                 return;
 
+
             arm.Transform.localRotation = Quaternion.AngleAxis(angle, arm.Axis);
         }
     }

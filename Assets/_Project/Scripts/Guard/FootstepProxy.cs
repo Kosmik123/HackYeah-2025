@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FootstepProxy : MonoBehaviour
 {
-    [SerializeField] private GuardMovement guardMovement;
+    [SerializeField] private Guard guardMovement;
     
     public void ProxyFootstep()
     {

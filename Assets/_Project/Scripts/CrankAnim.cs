@@ -1,10 +1,13 @@
 using UnityEngine;
 
-[ExecuteAlways]
 public class CrankAnim : MonoBehaviour
 {
+    private static readonly int Rotate = Animator.StringToHash("rotate");
+
     public enum Axis { X, Y, Z }
 
+    private Animator anim;
+    
     [System.Serializable]
     public struct TargetScalePair
     {
@@ -16,6 +19,11 @@ public class CrankAnim : MonoBehaviour
     public float rotation = 0.0f;
     public TargetScalePair[] targets;
 
+    void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
+    
     void Update()
     {
         foreach (var pair in targets)
@@ -33,5 +41,10 @@ public class CrankAnim : MonoBehaviour
                 pair.target.localEulerAngles = euler;
             }
         }
+    }
+
+    public void MoveCrank()
+    {
+        anim.SetTrigger(Rotate);
     }
 }
