@@ -800,10 +800,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: DiggableRock
       objectReference: {fileID: 0}
+    - target: {fileID: 2787145262429781802, guid: d5423b1c3bcc01846b61abc279604763, type: 3}
+      propertyPath: objectHP
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3416217340513574410, guid: d5423b1c3bcc01846b61abc279604763, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 745343810}
+    - target: {fileID: 3416217340513574410, guid: d5423b1c3bcc01846b61abc279604763, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1914
+      objectReference: {fileID: 0}
     - target: {fileID: 4981552782599991759, guid: d5423b1c3bcc01846b61abc279604763, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
@@ -1043,6 +1051,10 @@ PrefabInstance:
     - target: {fileID: 1877143396747975741, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1952570065988177851, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: miningCooldown
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2080636076096208276, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
       propertyPath: m_Name

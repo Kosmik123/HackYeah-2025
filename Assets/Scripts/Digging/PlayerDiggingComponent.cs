@@ -14,7 +14,7 @@ public class PlayerDiggingComponent : MonoBehaviour
     [SerializeField] private float miningCooldown = 3f;
     [SerializeField] private int damage = 1;
     [SerializeField] private string animationName;
-    private float _timeFromLastHit = 3f;
+    private float _timeFromLastHit;
     private VFXEventAttribute VFXEventAttribute;
 
     private void Start()
@@ -22,6 +22,7 @@ public class PlayerDiggingComponent : MonoBehaviour
         if (!VFX) Debug.LogError($"No VFX found in {this}");
         else
             VFXEventAttribute = VFX.CreateVFXEventAttribute();
+        _timeFromLastHit = miningCooldown;
     }
 
     private void PlayVFX()
@@ -61,7 +62,6 @@ public class PlayerDiggingComponent : MonoBehaviour
         while (_timeFromLastHit <= miningCooldown)
         {
             _timeFromLastHit += Time.deltaTime;
-            Debug.Log(_timeFromLastHit);
             yield return null;
         }
     }
