@@ -217,7 +217,8 @@ MonoBehaviour:
   guard: {fileID: 51344811096640865}
   behaviors:
   - conditions:
-    - rid: 8408759374236877052
+    - rid: 8408759374236877060
+    - rid: 8408759374236877062
     actions:
     - rid: 8408759374236877056
     - rid: 8408759374236877057
@@ -226,11 +227,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 8408759374236877052
-      type: {class: HourCondition, ns: , asm: Assembly-CSharp}
-      data:
-        conditionType: 0
-        hour: 2
     - rid: 8408759374236877056
       type: {class: MoveAction, ns: , asm: Assembly-CSharp}
       data:
@@ -238,11 +234,21 @@ MonoBehaviour:
     - rid: 8408759374236877057
       type: {class: WaitAction, ns: , asm: Assembly-CSharp}
       data:
-        waitTime: 3
+        waitTime: 6
     - rid: 8408759374236877058
       type: {class: MoveAction, ns: , asm: Assembly-CSharp}
       data:
         spline: {fileID: 0}
+    - rid: 8408759374236877060
+      type: {class: HourCondition, ns: , asm: Assembly-CSharp}
+      data:
+        conditionType: 0
+        hour: 8.1
+    - rid: 8408759374236877062
+      type: {class: HourCondition, ns: , asm: Assembly-CSharp}
+      data:
+        conditionType: 1
+        hour: 8.5
 --- !u!1001 &3613538260711784248
 PrefabInstance:
   m_ObjectHideFlags: 0

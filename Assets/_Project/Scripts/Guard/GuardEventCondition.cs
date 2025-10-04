@@ -19,7 +19,7 @@ public class HourCondition : GuardEventCondition
     [SerializeField]
     private TimeConditionType conditionType;
     [SerializeField]
-    private int hour;
+    private float hour;
     
     public override bool IsMet()
     {
@@ -35,7 +35,7 @@ public class DayCondition : GuardEventCondition
     [SerializeField]
     private TimeConditionType conditionType;
     [SerializeField]
-    private int day;
+    private float day;
     
     public override bool IsMet()
     {

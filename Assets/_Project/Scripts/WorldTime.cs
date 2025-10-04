@@ -27,8 +27,9 @@ namespace HackYeah2025
         public float TimeScale => timeScale;
 
         [SerializeField]
-        private float startingMinutes = 0;
-        public float StartingMinutes => startingMinutes;
+        private float startingHour = 0;
+        [SerializeField]
+        private float startingMinute = 0;
 
         public static float Minutes => Instance.updater.Minutes;
         public static float Hours => Instance.updater.Hours;
@@ -40,9 +41,16 @@ namespace HackYeah2025
         private static void CreateInstance()
         {
             instance = Resources.Load<WorldTime>("World Time");
-            Updater.Initialize(instance.startingMinutes);
+            Updater.Initialize(instance.startingHour * 60 + instance.startingMinute);
         }
 
         private void TimeChanged() => OnTimeChanged?.Invoke();
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+        private static void AfterSceneLoad()
+        {
+            if (instance == null)
+                CreateInstance();
+        }
     }
 }

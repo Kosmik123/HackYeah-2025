@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: World Time
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineBlenderSettings
   timeScale: 10
-  startingMinutes: 1
+  startingHour: 7
+  startingMinute: 30

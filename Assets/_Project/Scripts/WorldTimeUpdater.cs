@@ -31,6 +31,7 @@ namespace HackYeah2025
                 var obj = new GameObject("World Time");
                 DontDestroyOnLoad(obj);
                 Instance.updater = obj.AddComponent<Updater>();
+                Instance.updater.totalMinutes = totalMinutes;
             }
 
             private void Update()
