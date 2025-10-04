@@ -23,6 +23,13 @@ public class GuardController : MonoBehaviour
         WorldTime.OnTimeChanged -= DecideAction;
     }
 
+    public void ActivateAction(int index)
+    {
+        currentActionIndex = index;
+        behaviors[currentActionIndex].OnFinished += GuardController_OnFinished;
+        behaviors[currentActionIndex].StartEvent(guard);
+    }
+
     private void DecideAction()
     {
         for (int i = behaviors.Length - 1; i >= 0; i--)
@@ -32,10 +39,7 @@ public class GuardController : MonoBehaviour
 
             if (behaviors[i].AreConditionsMet())
             {
-                currentActionIndex = i;
-                WorldTime.OnTimeChanged -= DecideAction;
-                behaviors[currentActionIndex].OnFinished += GuardController_OnFinished;
-                behaviors[currentActionIndex].StartEvent(guard);
+                ActivateAction(i);
                 break;
             }
         }
