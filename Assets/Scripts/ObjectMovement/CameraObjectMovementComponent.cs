@@ -57,7 +57,7 @@ public class CameraObjectMovementComponent : MonoBehaviour
         while (_enable)
         {
             _forcePoint = col.ClosestPoint(targetPoint);
-            targetPoint = transform.position + Vector3.forward * distanceFromCamera;
+            targetPoint = transform.position + transform.forward * distanceFromCamera;
             Vector3 dir = (targetPoint - _forcePoint).normalized;
             Vector3 toTarget = targetPoint - _manipulatedObject.position;
             float currentDistance = toTarget.magnitude;
