@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
         bedZoneCollider = bedZone.GetComponent<BoxCollider>();
         bedCollider = bed.GetComponent<BoxCollider>();
         _prisonCellCollider = prisonCellZone.GetComponent<BoxCollider>();
+        
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public bool CheckBedZone()

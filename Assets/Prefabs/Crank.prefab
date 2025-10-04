@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 7624731039369891487}
   - component: {fileID: 9192590534436515051}
   - component: {fileID: 6204080443968397937}
+  - component: {fileID: 4642283050956331425}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -121,6 +122,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4642283050956331425
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528014521605135022}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.9999993, y: 3.9693377, z: 2}
+  m_Center: {x: 3.2626568e-16, y: -0.050688095, z: -0.0000019048601}
 --- !u!1 &722278818108789149
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,6 +718,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3630025050019853125}
+  - component: {fileID: 5712779278192690119}
+  - component: {fileID: 951494806098555533}
+  - component: {fileID: 6291151422859692123}
+  - component: {fileID: 6441085987305684521}
   m_Layer: 0
   m_Name: mechanism
   m_TagString: Untagged
@@ -737,6 +763,94 @@ Transform:
   - {fileID: 1317540378138470540}
   m_Father: {fileID: 8002671330336711798}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5712779278192690119
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4119562345515297279}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0804071, y: 2.3400025, z: 0.36654443}
+  m_Center: {x: 0.114189625, y: 0.1528132, z: 0.81073534}
+--- !u!65 &951494806098555533
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4119562345515297279}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7221687, y: 1.6015681, z: 0.3820067}
+  m_Center: {x: 0.0016103387, y: -0.22621292, z: 0.42221496}
+--- !u!136 &6291151422859692123
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4119562345515297279}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.15805721
+  m_Height: 2.2304926
+  m_Direction: 1
+  m_Center: {x: 1.0359155, y: 0.036055326, z: 0.44}
+--- !u!136 &6441085987305684521
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4119562345515297279}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.062141776
+  m_Height: 1.8708489
+  m_Direction: 1
+  m_Center: {x: -0.85, y: 0.21587706, z: 0.38}
 --- !u!1 &4124317385910388632
 GameObject:
   m_ObjectHideFlags: 0
@@ -2123,7 +2237,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
