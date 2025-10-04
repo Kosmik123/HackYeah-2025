@@ -443,11 +443,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1959905982
-      Data2: 1246085671
-      Data3: 2028470954
-      Data4: 362139942
-    Path: event:/DialogueLetterSound
+      Data1: 723196135
+      Data2: 1092338316
+      Data3: -662494296
+      Data4: -1315265036
+    Path: event:/Dialogue/Dialogue
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
