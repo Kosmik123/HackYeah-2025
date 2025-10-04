@@ -1,9 +1,15 @@
+using System;
+using Cysharp.Threading.Tasks;
+using FMODUnity;
 using TMPro;
 using UnityEngine;
 
 public class UISystem : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private TMP_Text tooltip;
+    [SerializeField] private TMP_Text dialogue;
+    [SerializeField] private StudioEventEmitter dialogueSoundEmitter;
     
     public void ShowTooltip(string message)
     {
@@ -15,6 +21,36 @@ public class UISystem : MonoBehaviour
     {
         tooltip.gameObject.SetActive(false);
         tooltip.text = "";
+    }
+    
+    public async void ShowDialogue(string text, float letterPause = 0.15f, float completeDelay = 1.0f)
+    {
+        try
+        {
+            dialogue.gameObject.SetActive(true);
+            dialogue.text = "";
+        
+            while (text.Length > 0)
+            {
+                dialogue.text += text[0];
+                text = text.Remove(0, 1);
+                dialogueSoundEmitter.Play();
+                await UniTask.WaitForSeconds(letterPause);
+            }
+            await UniTask.WaitForSeconds(completeDelay);
+        
+            dialogue.gameObject.SetActive(false);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e);
+        }
+    }
+    
+    [ContextMenu("Show Test Dialogue")]
+    private void ShowTestDialogue()
+    {
+        ShowDialogue("This is a test dialogue message.");
     }
     
     [ContextMenu("Show Test Tooltip")]
