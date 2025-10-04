@@ -14,7 +14,7 @@ public class Crank : MonoBehaviour
     }
     
     [ContextMenu("Move Crank")]
-    void MoveCrank()
+    public void MoveCrank()
     {
         anim.SetTrigger(Rotate);
     }
