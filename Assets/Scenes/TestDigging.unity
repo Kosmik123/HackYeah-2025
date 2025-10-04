@@ -587,8 +587,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraObjectMovementComponent
   manipulatedObject: {fileID: 237397330}
-  forceMultiplier: 1
-  distanceFromCamera: 1
+  forceMultiplier: 3
+  distanceFromCamera: 2
   maxSpeed: 2
   stoppingOffset: 0.1
 --- !u!1 &1239670049
@@ -865,7 +865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DiggingObjectComponent
   scaleToReduce: 1
-  objectHP: 10
+  objectHP: 7
 --- !u!64 &1987823140
 MeshCollider:
   m_ObjectHideFlags: 0
