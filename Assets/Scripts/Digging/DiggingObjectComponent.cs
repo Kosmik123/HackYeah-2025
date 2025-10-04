@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DiggingObjectComponent : MonoBehaviour
 {
@@ -9,12 +10,15 @@ public class DiggingObjectComponent : MonoBehaviour
     private float _baseScale = 0;
     private float _scaleReduceAmount;
 
+    public Action<bool> OnHit;
+
     public enum EScale
     {
         X,
         Y,
         Z
     }
+
 
     private void Start()
     {
@@ -73,6 +77,7 @@ public class DiggingObjectComponent : MonoBehaviour
 
     private void ObjectHit(int dmg)
     {
+        OnHit?.Invoke(objectHP > 0);
         if (objectHP > 0)
         {
             PlayHitVFX();
