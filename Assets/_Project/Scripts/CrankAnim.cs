@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 
 public class CrankAnim : MonoBehaviour
@@ -7,6 +8,7 @@ public class CrankAnim : MonoBehaviour
     public enum Axis { X, Y, Z }
 
     private Animator anim;
+    private StudioEventEmitter _emitter;
     
     [System.Serializable]
     public struct TargetScalePair
@@ -22,6 +24,7 @@ public class CrankAnim : MonoBehaviour
     void Awake()
     {
         anim = GetComponent<Animator>();
+        _emitter = GetComponent<StudioEventEmitter>();
     }
     
     void Update()
@@ -46,5 +49,9 @@ public class CrankAnim : MonoBehaviour
     public void MoveCrank()
     {
         anim.SetTrigger(Rotate);
+        if (_emitter.IsPlaying() == false)
+        {
+            _emitter.Play();
+        }
     }
 }
