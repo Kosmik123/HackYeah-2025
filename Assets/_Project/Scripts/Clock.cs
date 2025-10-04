@@ -2,34 +2,35 @@ using UnityEngine;
 
 namespace HackYeah2025
 {
+    public struct ClockArm
+    {
+        public Transform Transform;
+        public Vector3 Axis;
+    }
+
+
     public class Clock : MonoBehaviour
     {
         [SerializeField]
-        private WorldTime worldTime;
-        [Space]
+        private ClockArm hourArm;
         [SerializeField]
-        private Transform hourArm;
-        [SerializeField]
-        private Transform minuteArm;
-
-        private void Reset()
-        {
-            worldTime = FindAnyObjectByType<WorldTime>();
-        }
+        private ClockArm minuteArm;
 
         private void Update()
         {
             SetHourArm();
-            SetMinuteArm(); 
+            SetMinuteArm();
         }
 
-        private void SetHourArm() => SetArmRotation(hourArm, 360 * worldTime.Hours / WorldTime.HoursInDay);
-        private void SetMinuteArm() => SetArmRotation(minuteArm, 360 * worldTime.Minutes / WorldTime.MinutesInHour);
+        private void SetHourArm() => SetArmRotation(hourArm, 360 * WorldTime.Hours / 12);
+        private void SetMinuteArm() => SetArmRotation(minuteArm, 360 * WorldTime.Minutes / WorldTime.MinutesInHour);
 
-        private static void SetArmRotation (Transform arm, float angle)
+        private static void SetArmRotation(ClockArm arm, float angle)
         {
-            if (arm)    
-                arm.localRotation = Quaternion.AngleAxis(angle, Vector3.forward);  
+            if (arm.Transform == null)
+                return;
+
+            arm.Transform.localRotation = Quaternion.AngleAxis(angle, arm.Axis);
         }
     }
 }

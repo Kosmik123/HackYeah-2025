@@ -2,8 +2,10 @@ using UnityEngine;
 
 namespace HackYeah2025
 {
-    public class WorldTime : MonoBehaviour
+    public class WorldTime : ScriptableObject
     {
+        public static WorldTime Instance { get; private set; }
+
         public const float MinutesInHour = 60f;
         public const float HoursInDay = 24f;
 
@@ -19,15 +21,45 @@ namespace HackYeah2025
         [SerializeField]
         private float minutes;
 
-        public float Minutes => totalMinutes % MinutesInHour;
-        public float Hours => totalMinutes / MinutesInHour % HoursInDay;
-        public float Days => totalMinutes / (MinutesInHour * HoursInDay);
+        public static float Minutes => Instance.totalMinutes % MinutesInHour;
+        public static float Hours => Instance.totalMinutes / MinutesInHour % HoursInDay;
+        public static float Days => Instance.totalMinutes / (MinutesInHour * HoursInDay);
+                
+        public static int WholeMinutes => Mathf.FloorToInt(Minutes);
+        public static int WholeHours => Mathf.FloorToInt(Hours);
+        public static int WholeDays => Mathf.FloorToInt(Days);
 
-        private void Update()
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        private static void Initialize()
         {
-            totalMinutes += Time.deltaTime * timeScale;
-            hours = Hours;  
-            minutes = Minutes;
+            if (Instance == null)
+            {
+                Instance = Resources.Load<WorldTime>("World Time");
+                Instance.hideFlags = HideFlags.HideAndDontSave;
+            }
+        }
+
+        private class WorldTimeUpdater : MonoBehaviour
+        {
+            private static WorldTimeUpdater instance;
+            public static WorldTimeUpdater Instance
+            {
+                get
+                {
+                    if (instance == null)
+                    {
+                        var go = new GameObject("World Time Updater");
+                        instance = go.AddComponent<WorldTimeUpdater>();
+                        DontDestroyOnLoad(go);
+                    }
+                    return instance;
+                }
+            }
+
+            private void Update()
+            {
+
+            }
         }
     }
 }
