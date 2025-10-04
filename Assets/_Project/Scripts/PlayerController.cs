@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private CameraObjectMovementComponent _cameraObjectMovementComponent;
     private float _defaultRadius;
     private PlayerDiggingComponent _playerDiggingComponent;
+    private Animator _playerAnimator;
 
     void Awake()
     {
@@ -32,6 +33,9 @@ public class PlayerController : MonoBehaviour
         if (!_cameraObjectMovementComponent) Debug.LogError("CameraComponent not found on main camera!");
         _playerDiggingComponent = GetComponent<PlayerDiggingComponent>();
         if (!_playerDiggingComponent) Debug.LogError("No player digging component found on player!");
+        _playerAnimator = GetComponentInChildren<Animator>();
+        if(!_playerAnimator) Debug.LogError("No animator on player!");
+        
     }
 
     void OnEnable()
@@ -58,7 +62,8 @@ public class PlayerController : MonoBehaviour
         //rotate player left right
         float mouseX = lookInput.x * rotationSpeed * Time.deltaTime;
         transform.Rotate(Vector3.up * mouseX);
-
+        var currentSpeed = controller.velocity.magnitude;
+        _playerAnimator.SetFloat("Speed", currentSpeed);
         // Try to stand up if crouching and not holding crouch
         if (isCrouching && wantsToStand && !IsCeilingAbove())
         {
@@ -121,7 +126,12 @@ public class PlayerController : MonoBehaviour
                 var rockComp = hit.transform.gameObject.GetComponent<DiggingObjectComponent>();
                 if (rockComp)
                 {
-                    _playerDiggingComponent.TryDigObject(rockComp);
+                    var dug = _playerDiggingComponent.TryDigObject(rockComp);
+                    if (dug)
+                    {
+                        _playerAnimator.SetTrigger("Dig");
+                        //_playerAnimator.ResetTrigger("Dig");
+                    }
                     break;
                 }
                 if(hit.transform.gameObject.GetComponent<Rigidbody>())

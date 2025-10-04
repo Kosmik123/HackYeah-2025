@@ -257,7 +257,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 60.000004
+  field of view: 50
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -283,8 +283,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106954709}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.084, y: 1.751, z: -9.019508}
+  m_LocalRotation: {x: -0.49636602, y: 0, z: 0, w: 0.8681134}
+  m_LocalPosition: {x: 0.084, y: 1.866, z: -2.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -370,6 +370,14 @@ PrefabInstance:
       propertyPath: bedZone
       value: 
       objectReference: {fileID: 626984193}
+    - target: {fileID: 8144002693285144180, guid: ad5d2367894ebc0489b324c3625dcff4, type: 3}
+      propertyPath: playerRef
+      value: 
+      objectReference: {fileID: 1556876001}
+    - target: {fileID: 8144002693285144180, guid: ad5d2367894ebc0489b324c3625dcff4, type: 3}
+      propertyPath: prisonCellZone
+      value: 
+      objectReference: {fileID: 626984193}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -416,7 +424,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4, y: 2, z: 2}
+  m_Size: {x: 10, y: 10, z: 6}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &626984195
 Transform:
@@ -427,7 +435,7 @@ Transform:
   m_GameObject: {fileID: 626984193}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.088, y: 0.65082, z: -4.38}
+  m_LocalPosition: {x: 0.088, y: 0.65082, z: -3.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -788,6 +796,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1556876001 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2080636076096208276, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+  m_PrefabInstance: {fileID: 1899371595}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1588580370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1022,7 +1035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1877143396747975741, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.019508
+      value: -2.29
       objectReference: {fileID: 0}
     - target: {fileID: 1877143396747975741, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1059,6 +1072,14 @@ PrefabInstance:
     - target: {fileID: 2080636076096208276, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2581668094798092111, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 605f09d1d2f8dde44895f1c40484f1c3, type: 3}
+    - target: {fileID: 2581668094798092111, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6551744473957633641, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
       propertyPath: ceilingMask.m_Bits
