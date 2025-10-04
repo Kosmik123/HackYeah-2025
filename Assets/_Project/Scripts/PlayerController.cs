@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
             var distance = _cameraObjectMovementComponent.GetMaxDistance();
             Ray ray = new Ray(_cameraObjectMovementComponent.transform.position, Camera.main.transform.forward);
             RaycastHit hit;
-            if(!Physics.Raycast(ray, out hit, distance)) return;
+            if(!Physics.Raycast(ray, out hit, distance, ceilingMask)) return;
             _cameraObjectMovementComponent.MoveObject(hit.transform.gameObject);
         }
 
