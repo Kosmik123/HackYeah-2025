@@ -189,9 +189,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6d457ce0f161e4b995b5b98b5b0c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: NewAssembly::HackYeah2025.Clock
-  worldTime: {fileID: 0}
-  hourArm: {fileID: 217505024925217175}
-  minuteArm: {fileID: 5899206839320317370}
+  hourArm:
+    Transform: {fileID: 217505024925217175}
+    Axis: {x: 0, y: 0, z: 1}
+  minuteArm:
+    Transform: {fileID: 5899206839320317370}
+    Axis: {x: 0, y: 0, z: 1}
 --- !u!1 &5083629065257122466
 GameObject:
   m_ObjectHideFlags: 0

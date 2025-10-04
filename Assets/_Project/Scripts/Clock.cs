@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace HackYeah2025
 {
+    [System.Serializable]
     public struct ClockArm
     {
         public Transform Transform;
@@ -22,7 +23,7 @@ namespace HackYeah2025
         }
 
         private void SetHourArm() => SetArmRotation(hourArm, 360 * WorldTime.Hours / 12);
-        private void SetMinuteArm() => SetArmRotation(minuteArm, 360 * WorldTime.Minutes / WorldTimeConfig.MinutesInHour);
+        private void SetMinuteArm() => SetArmRotation(minuteArm, 360 * WorldTime.Minutes / WorldTime.MinutesInHour);
 
         private static void SetArmRotation(ClockArm arm, float angle)
         {
