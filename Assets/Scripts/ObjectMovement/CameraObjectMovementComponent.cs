@@ -5,7 +5,7 @@ using Debug = UnityEngine.Debug;
 
 public class CameraObjectMovementComponent : MonoBehaviour
 {
-    [SerializeField] private float forceMultiplier = 1f;
+    [SerializeField] private float forceMultiplier = 3f;
     [SerializeField] private float distanceFromCamera = 2f;
     [SerializeField] private float maxSpeed = 5f;
     [SerializeField] private float stoppingOffset = 0.1f;
