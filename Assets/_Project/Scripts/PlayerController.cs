@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private float _defaultRadius;
     private PlayerDiggingComponent _playerDiggingComponent;
     private Animator _playerAnimator;
+    private DiggingObjectComponent _lastHitDiggingObjectComponent;
 
     void Awake()
     {
@@ -123,14 +124,13 @@ public class PlayerController : MonoBehaviour
             if (hits.Length == 0) return;
             foreach (RaycastHit hit in hits)
             {
-                var rockComp = hit.transform.gameObject.GetComponent<DiggingObjectComponent>();
-                if (rockComp)
+                _lastHitDiggingObjectComponent = hit.transform.gameObject.GetComponent<DiggingObjectComponent>();
+                if (_lastHitDiggingObjectComponent)
                 {
-                    var dug = _playerDiggingComponent.TryDigObject(rockComp);
+                    var dug = _playerDiggingComponent.CanDigObject();
                     if (dug)
                     {
                         _playerAnimator.SetTrigger("Dig");
-                        //_playerAnimator.ResetTrigger("Dig");
                     }
                     break;
                 }
@@ -147,6 +147,14 @@ public class PlayerController : MonoBehaviour
             _cameraObjectMovementComponent.ReleaseObject();
         }
     }
+
+    public void DiggingAnimationEnded()
+    {
+        _playerDiggingComponent.TryDigObject(_lastHitDiggingObjectComponent);
+    }
+
+
+
 
     public void OnCrouch(InputAction.CallbackContext context)
     {

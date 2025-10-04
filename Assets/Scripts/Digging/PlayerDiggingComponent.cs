@@ -56,6 +56,11 @@ public class PlayerDiggingComponent : MonoBehaviour
         return false;
     }
 
+    public bool CanDigObject()
+    {
+        return CanDig();
+    }
+
     private IEnumerator StartCooldown()
     {
         _timeFromLastHit = 0f;
