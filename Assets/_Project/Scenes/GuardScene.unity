@@ -593,6 +593,14 @@ PrefabInstance:
       propertyPath: m_Target
       value: 
       objectReference: {fileID: 109135686}
+    - target: {fileID: 7792015389479661496, guid: c764bb1ad219a714e95b2b1f59bb3681, type: 3}
+      propertyPath: m_Duration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7792015389479661496, guid: c764bb1ad219a714e95b2b1f59bb3681, type: 3}
+      propertyPath: m_MaxSpeed
+      value: 9.235776
+      objectReference: {fileID: 0}
     - target: {fileID: 8088203896476555747, guid: c764bb1ad219a714e95b2b1f59bb3681, type: 3}
       propertyPath: m_Name
       value: Guard

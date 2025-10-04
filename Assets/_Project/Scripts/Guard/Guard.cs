@@ -1,4 +1,5 @@
 using System;
+using Cysharp.Threading.Tasks;
 using FMODUnity;
 using UnityEngine;
 using UnityEngine.Splines;
@@ -13,10 +14,25 @@ public class Guard : MonoBehaviour
     [SerializeField] private StudioEventEmitter footstepEmitter;
     [SerializeField] private StudioEventEmitter auraEmitter;
     [SerializeField] private SplineAnimate splineAnimate;
+    
+    [Header("Settings")]
+    [SerializeField] private float stayDuration = 3f;
 
     public float Speed { get; private set; }
+    public Action OnPathEnded { get; set; }
+    public Action OnPathStarted { get; set; }
     
     private Vector3 lastPosition;
+
+    private void Awake()
+    {
+        splineAnimate.Completed += OnPathCompleted;
+    }
+
+    private void OnDestroy()
+    {
+        splineAnimate.Completed -= OnPathCompleted;
+    }
 
     private void Update()
     {
@@ -40,5 +56,22 @@ public class Guard : MonoBehaviour
     private void UpdateAnimator()
     {
         animator.SetFloat(Speed1, Speed);
+    }
+    
+    private async void OnPathCompleted()
+    {
+        try
+        {
+            OnPathEnded?.Invoke();
+
+            await UniTask.WaitForSeconds(stayDuration);
+        
+            splineAnimate.Restart(true);
+            OnPathStarted?.Invoke();
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e);
+        }
     }
 }
