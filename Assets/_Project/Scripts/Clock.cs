@@ -8,7 +8,6 @@ namespace HackYeah2025
         public Vector3 Axis;
     }
 
-
     public class Clock : MonoBehaviour
     {
         [SerializeField]
@@ -23,7 +22,7 @@ namespace HackYeah2025
         }
 
         private void SetHourArm() => SetArmRotation(hourArm, 360 * WorldTime.Hours / 12);
-        private void SetMinuteArm() => SetArmRotation(minuteArm, 360 * WorldTime.Minutes / WorldTime.MinutesInHour);
+        private void SetMinuteArm() => SetArmRotation(minuteArm, 360 * WorldTime.Minutes / WorldTimeConfig.MinutesInHour);
 
         private static void SetArmRotation(ClockArm arm, float angle)
         {
