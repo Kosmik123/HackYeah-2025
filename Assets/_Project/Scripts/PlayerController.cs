@@ -124,15 +124,16 @@ public class PlayerController : MonoBehaviour
             if (hits.Length == 0) return;
             foreach (RaycastHit hit in hits)
             {
+                var interactable = hit.transform.gameObject.GetComponent<IInteractable>();
+                if (interactable != null)
+                {
+                    interactable.Interact();
+                    break;
+                }
+                
                 _lastHitDiggingObjectComponent = hit.transform.gameObject.GetComponent<DiggingObjectComponent>();
                 if (_lastHitDiggingObjectComponent)
                 {
-                    var interactable = hit.transform.gameObject.GetComponent<IInteractable>();
-                    if (interactable != null)
-                    {
-                        interactable.Interact();
-                        break;
-                    }
                     var dug = _playerDiggingComponent.CanDigObject();
                     if (dug)
                     {
