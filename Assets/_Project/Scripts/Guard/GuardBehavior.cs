@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 [System.Serializable]   
 public class GuardBehavior
@@ -13,6 +14,9 @@ public class GuardBehavior
 
     public bool AreConditionsMet()
     {
+        if (conditions.Length <= 0)
+            return false;
+
         foreach (var condition in conditions)
             if (condition.IsMet() == false)
                 return false;
