@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     private CameraObjectMovementComponent _cameraObjectMovementComponent;
     private float _defaultRadius;
     private PlayerDiggingComponent _playerDiggingComponent;
+    private Animator _playerAnimator;
+    private DiggingObjectComponent _lastHitDiggingObjectComponent;
 
     void Awake()
     {
@@ -32,6 +34,9 @@ public class PlayerController : MonoBehaviour
         if (!_cameraObjectMovementComponent) Debug.LogError("CameraComponent not found on main camera!");
         _playerDiggingComponent = GetComponent<PlayerDiggingComponent>();
         if (!_playerDiggingComponent) Debug.LogError("No player digging component found on player!");
+        _playerAnimator = GetComponentInChildren<Animator>();
+        if(!_playerAnimator) Debug.LogError("No animator on player!");
+        
     }
 
     void OnEnable()
@@ -58,7 +63,8 @@ public class PlayerController : MonoBehaviour
         //rotate player left right
         float mouseX = lookInput.x * rotationSpeed * Time.deltaTime;
         transform.Rotate(Vector3.up * mouseX);
-
+        var currentSpeed = controller.velocity.magnitude;
+        _playerAnimator.SetFloat("Speed", currentSpeed);
         // Try to stand up if crouching and not holding crouch
         if (isCrouching && wantsToStand && !IsCeilingAbove())
         {
@@ -118,16 +124,20 @@ public class PlayerController : MonoBehaviour
             if (hits.Length == 0) return;
             foreach (RaycastHit hit in hits)
             {
-                var interactable = hit.transform.gameObject.GetComponent<IInteractable>();
-                if (interactable != null)
+                _lastHitDiggingObjectComponent = hit.transform.gameObject.GetComponent<DiggingObjectComponent>();
+                if (_lastHitDiggingObjectComponent)
                 {
-                    interactable.Interact();
-                    break;
-                }
-                var rockComp = hit.transform.gameObject.GetComponent<DiggingObjectComponent>();
-                if (rockComp)
-                {
-                    _playerDiggingComponent.TryDigObject(rockComp);
+                    var interactable = hit.transform.gameObject.GetComponent<IInteractable>();
+                    if (interactable != null)
+                    {
+                        interactable.Interact();
+                        break;
+                    }
+                    var dug = _playerDiggingComponent.CanDigObject();
+                    if (dug)
+                    {
+                        _playerAnimator.SetTrigger("Dig");
+                    }
                     break;
                 }
                 if(hit.transform.gameObject.GetComponent<Rigidbody>())
@@ -143,6 +153,14 @@ public class PlayerController : MonoBehaviour
             _cameraObjectMovementComponent.ReleaseObject();
         }
     }
+
+    public void DiggingAnimationEnded()
+    {
+        _playerDiggingComponent.TryDigObject(_lastHitDiggingObjectComponent);
+    }
+
+
+
 
     public void OnCrouch(InputAction.CallbackContext context)
     {
