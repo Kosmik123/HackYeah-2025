@@ -11,10 +11,13 @@ public class PlayerController : MonoBehaviour
     private Vector2 lookInput;
     private CharacterController controller;
     float verticalVelocity = 0f;
+    private CameraObjectMovementComponent _cameraObjectMovementComponent;
     
     void Awake()
     {
         controller = GetComponent<CharacterController>();
+        _cameraObjectMovementComponent = Camera.main.GetComponent<CameraObjectMovementComponent>();
+        if(!_cameraObjectMovementComponent) Debug.LogError("CameraComponent not found on main camera!");
     }
 
     void OnEnable()
@@ -78,6 +81,23 @@ public class PlayerController : MonoBehaviour
         {
             lookInput = Vector2.zero;
             // Debug.Log("Look Input Canceled");
+        }
+    }
+
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            var distance = _cameraObjectMovementComponent.GetMaxDistance();
+            Ray ray = new Ray(_cameraObjectMovementComponent.transform.position, Camera.main.transform.forward);
+            RaycastHit hit;
+            if(!Physics.Raycast(ray, out hit, distance)) return;
+            _cameraObjectMovementComponent.MoveObject(hit.transform.gameObject);
+        }
+
+        if (context.canceled)
+        {
+            _cameraObjectMovementComponent.ReleaseObject();
         }
     }
 }
