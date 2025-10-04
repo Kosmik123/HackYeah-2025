@@ -1,14 +1,20 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.VFX;
+using Random = UnityEngine.Random;
 
 public class DiggingObjectComponent : MonoBehaviour
 {
     [SerializeField] private EScale scaleToReduce = EScale.Y;
     [SerializeField] private int objectHP = 10;
+    [SerializeField] private VisualEffect VFX;
+    [SerializeField] private Vector3 VFXvelocityVector;
+    [SerializeField] private Color VFXsecondaryColor;
     private GameObject _diggableObject;
     private float _baseScale = 0;
     private float _scaleReduceAmount;
+    private VFXEventAttribute VFXEventAttribute;
 
     public Action<bool> OnHit;
 
@@ -38,6 +44,23 @@ public class DiggingObjectComponent : MonoBehaviour
 
         _scaleReduceAmount = _baseScale/(objectHP+1);
         Debug.Log($"Object {this} will reduce scale {scaleToReduce.ToString()} by {_scaleReduceAmount}");
+        if (!VFX) Debug.LogError($"No VFX found in {this}");
+        else
+            VFXEventAttribute = VFX.CreateVFXEventAttribute();
+    }
+
+    private void PlayVFX()
+    {
+        if (!VFX) return;
+        // Set event data
+        VFXEventAttribute.SetFloat("size", Random.Range(0f, 1f));
+        VFXEventAttribute.SetVector3("velocity", VFXvelocityVector);
+        // Custom attribute: secondaryColor
+        VFXEventAttribute.SetVector3("secondaryColor",
+            new Vector3(VFXsecondaryColor.r, VFXsecondaryColor.g, VFXsecondaryColor.b));
+
+        // Data is copied from eventAttribute, so this object can be used again
+        VFX.SendEvent("OnPlay", VFXEventAttribute);
     }
 
     public void Hit(int dmg)
@@ -80,7 +103,6 @@ public class DiggingObjectComponent : MonoBehaviour
         OnHit?.Invoke(objectHP > 0);
         if (objectHP > 0)
         {
-            PlayHitVFX();
             objectHP -= dmg;
             ReduceScale();
         }
@@ -91,19 +113,15 @@ public class DiggingObjectComponent : MonoBehaviour
         }
     }
 
-    private void PlayHitVFX()
-    {
-        Debug.Log("Will play hit VFX");
-    }
 
     private void Despawn()
     {
-        Debug.Log("Will destroy object");
+        Destroy(gameObject);
     }
 
     private void PlayDestroyVFX()
     {
-        Debug.Log("Will show VFX of destruction");
+        PlayVFX();
     }
 
     private void ReduceScale()
