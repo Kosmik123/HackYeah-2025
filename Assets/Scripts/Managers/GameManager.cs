@@ -4,22 +4,38 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject bedZone;
     [SerializeField] private GameObject bed;
+    [SerializeField] private GameObject prisonCellZone;
+    [SerializeField] private GameObject playerRef;
     [SerializeField] private int requiredCornersWithinBounds = 6;
     public static GameManager Instance { get; private set; }
     private BoxCollider bedZoneCollider;
     private BoxCollider bedCollider;
+    private BoxCollider _prisonCellCollider;
 
     private void Awake()
     {
         Instance = this;
         bedZoneCollider = bedZone.GetComponent<BoxCollider>();
         bedCollider = bed.GetComponent<BoxCollider>();
+        _prisonCellCollider = prisonCellZone.GetComponent<BoxCollider>();
     }
 
     public bool CheckBedZone()
     {
         if (CheckHowMuchInBounds() < requiredCornersWithinBounds) return false;
         return true;
+    }
+
+    public bool CheckPrisonZone()
+    {
+        return _prisonCellCollider.bounds.Contains(playerRef.transform.position);
+    }
+
+    [ContextMenu("Test if player is within prison cell")]
+    private void CheckPrisonTest()
+    {
+        _prisonCellCollider = prisonCellZone.GetComponent<BoxCollider>();
+        Debug.Log(CheckPrisonZone() ? "Player within prison cell" : "Player is not within prison cell");
     }
 
     private int CheckHowMuchInBounds()

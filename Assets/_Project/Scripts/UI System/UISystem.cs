@@ -44,6 +44,7 @@ public class UISystem : MonoBehaviour
         
             dialogue.gameObject.SetActive(false);
             DialogueStopped = true;
+            dialogueSoundEmitter.Stop();
         }
         catch (Exception e)
         {
