@@ -6,21 +6,22 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public float jumpStrength = 5f;
     public float rotationSpeed = 1f;
-    
+
     public float crouchHeight = 1f;
     public float standHeight = 2f;
     public float crouchCenterY = 0f;
     public float standCenterY = 0f;
     public LayerMask ceilingMask;
-    
+
     private Vector2 moveInput;
     private Vector2 lookInput;
     private CharacterController controller;
     float verticalVelocity = 0f;
     private bool isCrouching = false;
     private bool wantsToStand = false;
-	private CameraObjectMovementComponent _cameraObjectMovementComponent;
+    private CameraObjectMovementComponent _cameraObjectMovementComponent;
     private float _defaultRadius;
+    private PlayerDiggingComponent _playerDiggingComponent;
 
     void Awake()
     {
@@ -28,7 +29,9 @@ public class PlayerController : MonoBehaviour
         _defaultRadius = controller.radius;
 
         _cameraObjectMovementComponent = Camera.main.GetComponent<CameraObjectMovementComponent>();
-        if(!_cameraObjectMovementComponent) Debug.LogError("CameraComponent not found on main camera!");
+        if (!_cameraObjectMovementComponent) Debug.LogError("CameraComponent not found on main camera!");
+        _playerDiggingComponent = GetComponent<PlayerDiggingComponent>();
+        if (!_playerDiggingComponent) Debug.LogError("No player digging component found on player!");
     }
 
     void OnEnable()
@@ -40,22 +43,22 @@ public class PlayerController : MonoBehaviour
     {
         //Cursor.lockState = CursorLockMode.None;
     }
-    
+
     void Update()
     {
-        if(verticalVelocity < 0 && controller.isGrounded)
+        if (verticalVelocity < 0 && controller.isGrounded)
             verticalVelocity = 0f;
-        
+
         verticalVelocity += Physics.gravity.y * Time.deltaTime;
-        
+
         Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
         move.y = verticalVelocity;
-        controller.Move( moveSpeed * Time.deltaTime * move);
-        
+        controller.Move(moveSpeed * Time.deltaTime * move);
+
         //rotate player left right
         float mouseX = lookInput.x * rotationSpeed * Time.deltaTime;
         transform.Rotate(Vector3.up * mouseX);
-        
+
         // Try to stand up if crouching and not holding crouch
         if (isCrouching && wantsToStand && !IsCeilingAbove())
         {
@@ -71,14 +74,14 @@ public class PlayerController : MonoBehaviour
             moveInput = context.ReadValue<Vector2>();
             Debug.Log("Move Input: " + moveInput);
         }
-        
-        if(context.canceled)
+
+        if (context.canceled)
         {
             moveInput = Vector2.zero;
             Debug.Log("Move Input Canceled");
         }
     }
-    
+
     public void OnJump(InputAction.CallbackContext context)
     {
         Debug.Log("Try Jumped");
@@ -89,15 +92,15 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Jumped");
         }
     }
-    
+
     public void OnLook(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
             lookInput = context.ReadValue<Vector2>();
         }
-        
-        if(context.canceled)
+
+        if (context.canceled)
         {
             lookInput = Vector2.zero;
             // Debug.Log("Look Input Canceled");
@@ -110,9 +113,23 @@ public class PlayerController : MonoBehaviour
         {
             var distance = _cameraObjectMovementComponent.GetMaxDistance();
             Ray ray = new Ray(_cameraObjectMovementComponent.transform.position, Camera.main.transform.forward);
-            RaycastHit hit;
-            if(!Physics.Raycast(ray, out hit, distance, ceilingMask)) return;
-            _cameraObjectMovementComponent.MoveObject(hit.transform.gameObject);
+            RaycastHit[] hits =
+                Physics.RaycastAll(ray, distance, ceilingMask);
+            if (hits.Length == 0) return;
+            foreach (RaycastHit hit in hits)
+            {
+                var rockComp = hit.transform.gameObject.GetComponent<DiggingObjectComponent>();
+                if (rockComp)
+                {
+                    _playerDiggingComponent.TryDigObject(rockComp);
+                    break;
+                }
+                if(hit.transform.gameObject.GetComponent<Rigidbody>())
+                {
+                    _cameraObjectMovementComponent.MoveObject(hit.transform.gameObject);
+                    break;
+                }
+            }
         }
 
         if (context.canceled)
@@ -120,7 +137,7 @@ public class PlayerController : MonoBehaviour
             _cameraObjectMovementComponent.ReleaseObject();
         }
     }
-    
+
     public void OnCrouch(InputAction.CallbackContext context)
     {
         Debug.Log("Crouch Input: " + context.phase);
@@ -129,12 +146,13 @@ public class PlayerController : MonoBehaviour
             SetCrouch(true);
             wantsToStand = false;
         }
+
         if (context.canceled)
         {
             wantsToStand = true;
         }
     }
-    
+
     private void SetCrouch(bool crouch)
     {
         isCrouching = crouch;
