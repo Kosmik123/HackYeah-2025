@@ -36,7 +36,7 @@ public class DiggingObjectComponent : MonoBehaviour
         }
         if(_baseScale<0) Debug.LogError($"Diggable object {this} has no valid scale!");
 
-        _scaleReduceAmount = _baseScale/objectHP+1;
+        _scaleReduceAmount = _baseScale/(objectHP+1);
         Debug.Log($"Object {this} will reduce scale {scaleToReduce.ToString()} by {_scaleReduceAmount}");
     }
 
