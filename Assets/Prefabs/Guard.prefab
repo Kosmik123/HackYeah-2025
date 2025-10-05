@@ -224,9 +224,9 @@ MonoBehaviour:
     - rid: 8408759374236877078
     - rid: 8408759374236877058
   - conditions:
-    - rid: 8408759374236877086
-    - rid: 8408759374236877087
-    - rid: 8408759374236877088
+    - rid: 8408759374236877090
+    - rid: 8408759374236877091
+    - rid: 8408759374236877092
     actions:
     - rid: 8408759374236877056
     - rid: 519199403777458262
@@ -267,27 +267,27 @@ MonoBehaviour:
       type: {class: HourCondition, ns: , asm: Assembly-CSharp}
       data:
         conditionType: 0
-        hour: 8
+        hour: 0
     - rid: 8408759374236877082
       type: {class: HourCondition, ns: , asm: Assembly-CSharp}
       data:
         conditionType: 1
-        hour: 8.1
-    - rid: 8408759374236877086
+        hour: 1
+    - rid: 8408759374236877090
       type: {class: DayCondition, ns: , asm: Assembly-CSharp}
       data:
         conditionType: 1
         day: 1
-    - rid: 8408759374236877087
+    - rid: 8408759374236877091
       type: {class: HourCondition, ns: , asm: Assembly-CSharp}
       data:
         conditionType: 1
         hour: 8
-    - rid: 8408759374236877088
+    - rid: 8408759374236877092
       type: {class: HourCondition, ns: , asm: Assembly-CSharp}
       data:
         conditionType: 0
-        hour: 6.11
+        hour: 6.1
 --- !u!1001 &5159291275707915975
 PrefabInstance:
   m_ObjectHideFlags: 0
