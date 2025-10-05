@@ -31,9 +31,7 @@ public class PlayerCaught : MonoBehaviour
         float3 closestPoint = float3.zero;
         float closestT = 0f;
         GetComponent<PlayerController>().enabled = false;
-        warden.GetComponent<Guard>().enabled = false;
-        warden.GetComponent<GuardController>().enabled = false;
-        warden.GetComponent<SplineAnimate>().enabled = false;
+        
         warden.transform.position = wardenWaitingPosition.transform.position;
         warden.transform.rotation = wardenWaitingPosition.transform.rotation;
 
