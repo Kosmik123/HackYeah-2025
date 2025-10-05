@@ -189,6 +189,20 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 origin = transform.position;
         float rayLength = 1.6f;
-        return Physics.Raycast(origin, Vector3.up, rayLength, ceilingMask);
+        float offset = 0.15f; // adjust as needed
+
+        // Center, left, and right origins
+        Vector3[] origins = {
+            origin,
+            origin + transform.right * offset,
+            origin - transform.forward * offset
+        };
+
+        foreach (var o in origins)
+        {
+            if (Physics.Raycast(o, Vector3.up, rayLength, ceilingMask))
+                return true;
+        }
+        return false;
     }
 }
