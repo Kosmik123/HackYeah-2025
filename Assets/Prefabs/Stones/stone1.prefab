@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DiggingObjectComponent
   scaleToReduce: 1
-  objectHP: 4
+  objectHP: 5
   VFX: {fileID: 0}
   VFXvelocityVector: {x: 0, y: 0, z: 0}
   VFXsecondaryColor: {r: 0, g: 0, b: 0, a: 0}
