@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 5924364399830709774}
   - component: {fileID: 5364767889889855513}
   - component: {fileID: 1952570065988177851}
+  - component: {fileID: 1606262144069052342}
+  - component: {fileID: 2156201201684986516}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -274,9 +276,48 @@ MonoBehaviour:
     Path: 
   VFXvelocityVector: {x: 0, y: 0, z: 0}
   VFXsecondaryColor: {r: 0, g: 0, b: 0, a: 0}
-  miningCooldown: 3
   damage: 1
   animationName: 
+--- !u!114 &1606262144069052342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080636076096208276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c1e9d7ba9c4e448b1da249ebc032aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCaught
+  warden: {fileID: 0}
+  wardenWaitingPosition: {fileID: 0}
+  playerPullingTime: 5
+  distanceToStop: 1
+  ventSpline: {fileID: 0}
+--- !u!114 &2156201201684986516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080636076096208276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineAnimate
+  m_Target: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_LoopMode: 0
+  m_Method: 0
+  m_Duration: 5
+  m_MaxSpeed: 10
+  m_EasingMode: 0
+  m_AlignmentMode: 1
+  m_ObjectForwardAxis: 2
+  m_ObjectUpAxis: 1
+  m_StartOffset: 0
 --- !u!1 &3821276427994330946
 GameObject:
   m_ObjectHideFlags: 0
