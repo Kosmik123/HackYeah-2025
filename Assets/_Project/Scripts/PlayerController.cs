@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private PlayerDiggingComponent _playerDiggingComponent;
     private Animator _playerAnimator;
     private DiggingObjectComponent _lastHitDiggingObjectComponent;
+    private CinemachineCamera _cinemachineCamera;
 
     void Awake()
     {
@@ -35,8 +37,9 @@ public class PlayerController : MonoBehaviour
         _playerDiggingComponent = GetComponent<PlayerDiggingComponent>();
         if (!_playerDiggingComponent) Debug.LogError("No player digging component found on player!");
         _playerAnimator = GetComponentInChildren<Animator>();
-        if(!_playerAnimator) Debug.LogError("No animator on player!");
-        
+        if (!_playerAnimator) Debug.LogError("No animator on player!");
+        _cinemachineCamera = GetComponentInChildren<CinemachineCamera>();
+        if(!_cinemachineCamera)Debug.LogError("Cinemachine component not found on player controller!");
     }
 
     void OnEnable()
@@ -133,14 +136,17 @@ public class PlayerController : MonoBehaviour
                         interactable.Interact();
                         break;
                     }
+
                     var dug = _playerDiggingComponent.CanDigObject();
                     if (dug)
                     {
                         _playerAnimator.SetTrigger("Dig");
                     }
+
                     break;
                 }
-                if(hit.transform.gameObject.GetComponent<Rigidbody>())
+
+                if (hit.transform.gameObject.GetComponent<Rigidbody>())
                 {
                     _cameraObjectMovementComponent.MoveObject(hit.transform.gameObject);
                     break;
@@ -160,8 +166,6 @@ public class PlayerController : MonoBehaviour
     }
 
 
-
-
     public void OnCrouch(InputAction.CallbackContext context)
     {
         Debug.Log("Crouch Input: " + context.phase);
@@ -176,12 +180,28 @@ public class PlayerController : MonoBehaviour
             wantsToStand = true;
         }
     }
-
+    
     private void SetCrouch(bool crouch)
     {
+        if (crouch)
+            _playerAnimator.gameObject.transform.localPosition = new Vector3(
+                _playerAnimator.gameObject.transform.localPosition.x,
+                _playerAnimator.gameObject.transform.localPosition.y + 0.55f,
+                _playerAnimator.gameObject.transform.localPosition.z);
+        else
+            _playerAnimator.gameObject.transform.localPosition = new Vector3(
+                _playerAnimator.gameObject.transform.localPosition.x,
+                _playerAnimator.gameObject.transform.localPosition.y - 0.55f,
+                _playerAnimator.gameObject.transform.localPosition.z);
+        if (crouch)
+            _cinemachineCamera.gameObject.transform.localPosition = new Vector3(0.23f, 0.6f, 0.4f);
+        else
+            _cinemachineCamera.gameObject.transform.localPosition = new Vector3(0, 0.815f, 0.072f);
+
         isCrouching = crouch;
         controller.height = crouch ? crouchHeight : standHeight;
-        controller.radius = crouch ? 0.15f : _defaultRadius;
+        controller.radius = crouch ? 0.5f : _defaultRadius;
+        _playerAnimator.SetBool("Crouch", crouch);
     }
 
     private bool IsCeilingAbove()
