@@ -3523,7 +3523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd1323b0ae603804fa205bd12359ac99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraObjectMovementComponent
-  forceMultiplier: 3
+  forceMultiplier: 9
   distanceFromCamera: 2
   maxSpeed: 5
   stoppingOffset: 0.1
