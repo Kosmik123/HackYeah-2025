@@ -217,16 +217,15 @@ MonoBehaviour:
   guard: {fileID: 51344811096640865}
   behaviors:
   - conditions:
-    - rid: 8408759374236877060
-    - rid: 8408759374236877062
+    - rid: 8408759374236877081
+    - rid: 8408759374236877082
     actions:
     - rid: 8408759374236877056
     - rid: 8408759374236877078
     - rid: 8408759374236877058
   - conditions:
-    - rid: 8408759374236877075
-    - rid: 8408759374236877076
-    - rid: 8408759374236877080
+    - rid: 8408759374236877083
+    - rid: 8408759374236877084
     actions:
     - rid: 8408759374236877056
     - rid: 519199403777458262
@@ -255,35 +254,30 @@ MonoBehaviour:
       data:
         spline: {fileID: 0}
         moveSpeed: 5
-    - rid: 8408759374236877060
-      type: {class: HourCondition, ns: , asm: Assembly-CSharp}
-      data:
-        conditionType: 0
-        hour: 8.1
-    - rid: 8408759374236877062
-      type: {class: HourCondition, ns: , asm: Assembly-CSharp}
-      data:
-        conditionType: 1
-        hour: 8.5
-    - rid: 8408759374236877075
-      type: {class: DayCondition, ns: , asm: Assembly-CSharp}
-      data:
-        conditionType: 1
-        day: 1
-    - rid: 8408759374236877076
-      type: {class: HourCondition, ns: , asm: Assembly-CSharp}
-      data:
-        conditionType: 1
-        hour: 8
     - rid: 8408759374236877078
       type: {class: WaitAction, ns: , asm: Assembly-CSharp}
       data:
         waitTime: 10
-    - rid: 8408759374236877080
+    - rid: 8408759374236877081
       type: {class: HourCondition, ns: , asm: Assembly-CSharp}
       data:
         conditionType: 0
-        hour: 6.1
+        hour: 8
+    - rid: 8408759374236877082
+      type: {class: HourCondition, ns: , asm: Assembly-CSharp}
+      data:
+        conditionType: 1
+        hour: 8.1
+    - rid: 8408759374236877083
+      type: {class: HourCondition, ns: , asm: Assembly-CSharp}
+      data:
+        conditionType: 0
+        hour: 12
+    - rid: 8408759374236877084
+      type: {class: HourCondition, ns: , asm: Assembly-CSharp}
+      data:
+        conditionType: 1
+        hour: 12.3
 --- !u!1001 &5159291275707915975
 PrefabInstance:
   m_ObjectHideFlags: 0
