@@ -102,17 +102,17 @@ public class GuardDetection : MonoBehaviour
         else if (_bed)
         {
             Debug.Log("Guard noticed the hole");
-            EndGameInCell();
+            EndGameInCell(false);
         }
         else if (_crank)
         {
             Debug.Log("Failed at cranking too many times!");
-            EndGameInCell();
+            EndGameInCell(true);
         }
     }
 
-    private void EndGameInCell()
+    private void EndGameInCell(bool crankEnd)
     {
-        _player.GetComponent<EndInCell>().EndGameInCell();
+        _player.GetComponent<EndInCell>().EndGameInCell(crankEnd);
     }
 }

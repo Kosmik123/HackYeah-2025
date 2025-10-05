@@ -93,5 +93,6 @@ public class PlayerCaught : MonoBehaviour
             yield return null;
         }
         //GameManager.Instance.EndGame();
+        yield return FindAnyObjectByType<DialogueSystem>().ShowDialogue("not_in_cell");
     }
 }

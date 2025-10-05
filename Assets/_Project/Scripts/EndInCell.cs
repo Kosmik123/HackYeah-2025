@@ -21,9 +21,8 @@ public class EndInCell : MonoBehaviour
         FadeOutImage.color = color;
         FadeOutImage.gameObject.SetActive(false);
     }
-
-    [ContextMenu("Test")]
-    public void EndGameInCell()
+    
+    public void EndGameInCell(bool crankEnd)
     {
         var guardAnimate = warden.GetComponent<SplineAnimate>();
         GetComponent<PlayerController>().enabled = false;
@@ -33,12 +32,11 @@ public class EndInCell : MonoBehaviour
         transform.position = playerAwaitPosition.transform.position;
         transform.rotation = playerAwaitPosition.transform.rotation;
         guardAnimate.Play();
-        StartCoroutine(FadeScreen());
+        StartCoroutine(FadeScreen(crankEnd));
     }
 
-    private IEnumerator FadeScreen()
+    private IEnumerator FadeScreen(bool crankEnd)
     {
-        
         FadeOutImage.gameObject.SetActive(true);
         yield return new WaitForSeconds(splineDuration/ 3);
         float elapsed = 0f;
@@ -51,6 +49,15 @@ public class EndInCell : MonoBehaviour
             color.a = alpha;
             FadeOutImage.color = color;
             yield return null;
+        }
+
+        if (crankEnd)
+        {
+            yield return FindAnyObjectByType<DialogueSystem>().ShowDialogue("not_spinning");
+        }
+        else
+        {
+            yield return FindAnyObjectByType<DialogueSystem>().ShowDialogue("hole_visible");
         }
         //GameManager.Instance.EndGame();
     }
