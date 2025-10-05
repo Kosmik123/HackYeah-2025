@@ -3982,11 +3982,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2038315283190533423, guid: d16838160813350439c4a09f56658282, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.7600765
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2038315283190533423, guid: d16838160813350439c4a09f56658282, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2038315283190533423, guid: d16838160813350439c4a09f56658282, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4023,6 +4023,14 @@ PrefabInstance:
     - target: {fileID: 3129336697269924800, guid: d16838160813350439c4a09f56658282, type: 3}
       propertyPath: m_Name
       value: Clock
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464861814728712857, guid: d16838160813350439c4a09f56658282, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 21eed3b356064cb48b4ce5c1d137e7ea, type: 2}
+    - target: {fileID: 7476423458985163922, guid: d16838160813350439c4a09f56658282, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
