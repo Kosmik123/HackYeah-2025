@@ -6,14 +6,23 @@ using UnityEngine;
 public class DialogueSystem : MonoBehaviour
 {
     public List<KeyDialogueSlice> Dialogues;
+
+    public bool DialogueStopped { get; private set; } = true;
     
-    public async void ShowDialogue(string key)
+    public async UniTask ShowDialogue(string key)
     {
         try
         {
+            if (!DialogueStopped)
+            {
+                return;
+            }
+            DialogueStopped = false;
+            
             var dialogue = Dialogues.Find(d => d.Key == key);
             if (dialogue.Dialogue == null)
             {
+                DialogueStopped = true;
                 Debug.LogError($"Dialogue with key {key} not found.");
                 return;
             }
@@ -26,16 +35,26 @@ public class DialogueSystem : MonoBehaviour
                 await UniTask.WaitUntil(() => !uiSystem.DialogueStopped);
                 await UniTask.WaitUntil(() => uiSystem.DialogueStopped);
             }
+
+            DialogueStopped = true;
         }
         catch (Exception e)
         {
+            DialogueStopped = true;
             Debug.LogError(e);
         }
     }
     
     [ContextMenu("Show Test Dialogue")]
-    private void ShowTestDialogue()
+    private async void ShowTestDialogue()
     {
-        ShowDialogue("test");
+        try
+        {
+            await ShowDialogue("test");
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e);
+        }
     }
 }

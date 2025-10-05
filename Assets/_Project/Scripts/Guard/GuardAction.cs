@@ -16,7 +16,7 @@ public class WaitAction : GuardAction
     [SerializeField]
     private float waitTime;
 
-    public async override UniTask Execute(Guard guard)
+    public override async UniTask Execute(Guard guard)
     {
         await UniTask.WaitForSeconds(waitTime);
     }
@@ -28,8 +28,25 @@ public class MoveAction : GuardAction
     [SerializeField]
     private SplineContainer spline;
 
-    public async override UniTask Execute(Guard guard)
+    public override async UniTask Execute(Guard guard)
     {
         await guard.MoveAlongSpline(spline);
+    }
+}
+
+[System.Serializable]
+public class StartDialogueAction : GuardAction
+{
+    [SerializeField]
+    private DialogueSystem dialogueSystem;
+    [SerializeField]
+    private string dialogueKey;
+
+    public override async UniTask Execute(Guard guard)
+    {
+        if (dialogueSystem != null)
+        {
+            await dialogueSystem.ShowDialogue(dialogueKey);
+        }
     }
 }

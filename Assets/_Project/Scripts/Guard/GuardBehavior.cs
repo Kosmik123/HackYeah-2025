@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -26,9 +27,16 @@ public class GuardBehavior
 
     public async void StartEvent(Guard guard)
     {
-        foreach (var action in actions)
-            await action.Execute(guard);
-        guard.OnPathEnded += Guard_OnPathEnded;
+        try
+        {
+            foreach (var action in actions)
+                await action.Execute(guard);
+            guard.OnPathEnded += Guard_OnPathEnded;
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e);
+        }
     }
 
 
