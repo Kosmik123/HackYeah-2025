@@ -220,49 +220,33 @@ MonoBehaviour:
     - rid: 8408759374236877081
     - rid: 8408759374236877082
     actions:
-    - rid: 8408759374236877056
+    - rid: 8408759374236877115
     - rid: 8408759374236877078
-    - rid: 8408759374236877058
+    - rid: 8408759374236877116
   - conditions:
-    - rid: 8408759374236877090
-    - rid: 8408759374236877091
-    - rid: 8408759374236877092
+    - rid: 8408759374236877107
+    - rid: 8408759374236877106
     actions:
-    - rid: 8408759374236877056
-    - rid: 519199403777458262
-    - rid: 519199403777458335
-    - rid: 519199407179825229
-    - rid: 8408759374236877058
+    - rid: 8408759374236877117
+    - rid: 8408759374236877118
+    - rid: 8408759374236877119
+    - rid: 8408759374236877120
+    - rid: 8408759374236877116
+  - conditions:
+    - rid: 8408759374236877109
+    - rid: 8408759374236877110
+    actions:
+    - rid: 8408759374236877111
+    - rid: 8408759374236877113
+    - rid: 8408759374236877112
   currentActionIndex: -1
   references:
     version: 2
     RefIds:
-    - rid: 519199403777458262
-      type: {class: StartDialogueAction, ns: , asm: Assembly-CSharp}
-      data:
-        dialogueSystem: {fileID: 0}
-        dialogueKey: game_start_dialogue
-    - rid: 519199403777458335
-      type: {class: ShowScenarioObjects, ns: , asm: Assembly-CSharp}
-      data:
-        scenarioManager: {fileID: 0}
-    - rid: 519199407179825229
-      type: {class: InteractionUnlock, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 8408759374236877056
-      type: {class: MoveAction, ns: , asm: Assembly-CSharp}
-      data:
-        spline: {fileID: 0}
-        moveSpeed: 5
-    - rid: 8408759374236877058
-      type: {class: MoveAction, ns: , asm: Assembly-CSharp}
-      data:
-        spline: {fileID: 0}
-        moveSpeed: 5
     - rid: 8408759374236877078
       type: {class: WaitAction, ns: , asm: Assembly-CSharp}
       data:
-        waitTime: 10
+        waitTime: 5
     - rid: 8408759374236877081
       type: {class: HourCondition, ns: , asm: Assembly-CSharp}
       data:
@@ -273,21 +257,66 @@ MonoBehaviour:
       data:
         conditionType: 1
         hour: 1
-    - rid: 8408759374236877090
-      type: {class: DayCondition, ns: , asm: Assembly-CSharp}
-      data:
-        conditionType: 1
-        day: 1
-    - rid: 8408759374236877091
+    - rid: 8408759374236877106
       type: {class: HourCondition, ns: , asm: Assembly-CSharp}
       data:
         conditionType: 1
         hour: 8
-    - rid: 8408759374236877092
+    - rid: 8408759374236877107
       type: {class: HourCondition, ns: , asm: Assembly-CSharp}
       data:
         conditionType: 0
         hour: 6.1
+    - rid: 8408759374236877109
+      type: {class: HourCondition, ns: , asm: Assembly-CSharp}
+      data:
+        conditionType: 0
+        hour: 7
+    - rid: 8408759374236877110
+      type: {class: HourCondition, ns: , asm: Assembly-CSharp}
+      data:
+        conditionType: 1
+        hour: 7.5
+    - rid: 8408759374236877111
+      type: {class: MoveAction, ns: , asm: Assembly-CSharp}
+      data:
+        spline: {fileID: 0}
+        moveSpeed: 4
+    - rid: 8408759374236877112
+      type: {class: MoveAction, ns: , asm: Assembly-CSharp}
+      data:
+        spline: {fileID: 0}
+        moveSpeed: 6
+    - rid: 8408759374236877113
+      type: {class: WaitAction, ns: , asm: Assembly-CSharp}
+      data:
+        waitTime: 5
+    - rid: 8408759374236877115
+      type: {class: MoveAction, ns: , asm: Assembly-CSharp}
+      data:
+        spline: {fileID: 0}
+        moveSpeed: 5
+    - rid: 8408759374236877116
+      type: {class: MoveAction, ns: , asm: Assembly-CSharp}
+      data:
+        spline: {fileID: 0}
+        moveSpeed: 5
+    - rid: 8408759374236877117
+      type: {class: MoveAction, ns: , asm: Assembly-CSharp}
+      data:
+        spline: {fileID: 0}
+        moveSpeed: 6
+    - rid: 8408759374236877118
+      type: {class: WaitAction, ns: , asm: Assembly-CSharp}
+      data:
+        waitTime: 5
+    - rid: 8408759374236877119
+      type: {class: ShowScenarioObjects, ns: , asm: Assembly-CSharp}
+      data:
+        scenarioManager: {fileID: 0}
+    - rid: 8408759374236877120
+      type: {class: InteractionUnlock, ns: , asm: Assembly-CSharp}
+      data: 
 --- !u!1001 &5159291275707915975
 PrefabInstance:
   m_ObjectHideFlags: 0
