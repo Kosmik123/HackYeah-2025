@@ -249,6 +249,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c764bb1ad219a714e95b2b1f59bb3681, type: 3}
+--- !u!1 &174245804 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8088203896476555747, guid: c764bb1ad219a714e95b2b1f59bb3681, type: 3}
+  m_PrefabInstance: {fileID: 174245803}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &243691615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -481,6 +486,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d0a3e60719be0e4f9acf48be2e5894a, type: 3}
+--- !u!114 &708682569 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3553877031270569020, guid: 7d0a3e60719be0e4f9acf48be2e5894a, type: 3}
+  m_PrefabInstance: {fileID: 708682568}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &759853270
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,6 +644,30 @@ PrefabInstance:
       propertyPath: OverrideMinDistance
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7559026153994822968, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7559026153994822968, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.024
+      objectReference: {fileID: 0}
+    - target: {fileID: 7559026153994822968, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.15199995
+      objectReference: {fileID: 0}
+    - target: {fileID: 7559026153994822968, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7559026153994822968, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7559026153994822968, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
     - target: {fileID: 8156693790752191549, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.53174
@@ -673,6 +713,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+--- !u!1 &761405740 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1616676956104352651, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+  m_PrefabInstance: {fileID: 761405739}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &761405741 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 446729993049654736, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+  m_PrefabInstance: {fileID: 761405739}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab5c7d4c32e743048dfca98e2d5914f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineContainer
 --- !u!1001 &780913524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1587,6 +1643,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1606262144069052342, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: warden
+      value: 
+      objectReference: {fileID: 174245804}
+    - target: {fileID: 1606262144069052342, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: ventSpline
+      value: 
+      objectReference: {fileID: 761405741}
+    - target: {fileID: 1606262144069052342, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: FadeOutImage
+      value: 
+      objectReference: {fileID: 708682569}
+    - target: {fileID: 1606262144069052342, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: wardenWaitingPosition
+      value: 
+      objectReference: {fileID: 761405740}
     - target: {fileID: 1877143396747975741, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.666161
