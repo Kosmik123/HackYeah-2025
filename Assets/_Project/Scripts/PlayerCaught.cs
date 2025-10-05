@@ -1,4 +1,5 @@
 using System.Collections;
+using FMODUnity;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Splines;
@@ -12,6 +13,8 @@ public class PlayerCaught : MonoBehaviour
     [SerializeField] private float distanceToStop = 1f;
     [SerializeField] private SplineContainer ventSpline;
     [SerializeField] private Image FadeOutImage;
+    [SerializeField] private EventReference jumpScareSound;
+    [SerializeField] private EventReference tenseSounds;
 
     private void Start()
     {
@@ -59,7 +62,7 @@ public class PlayerCaught : MonoBehaviour
 
         // Move the animated object to the nearest point
         splineAnimate.NormalizedTime = closestT;
-        splineAnimate.Restart(false); // false = don’t reset time to 0
+        splineAnimate.Restart(false); // false = donï¿½t reset time to 0
 
         transform.position = closestPoint;
 
@@ -74,10 +77,12 @@ public class PlayerCaught : MonoBehaviour
 
     private IEnumerator FadeScreen()
     {
+        RuntimeManager.PlayOneShot(tenseSounds);
         FadeOutImage.gameObject.SetActive(true);
         yield return new WaitForSeconds((playerPullingTime * 2 )/ 3);
         float elapsed = 0f;
         var fadeDuration = (playerPullingTime+2) / 3;
+        RuntimeManager.PlayOneShot(jumpScareSound);
         while (elapsed < fadeDuration)
         {
             elapsed += Time.deltaTime;
