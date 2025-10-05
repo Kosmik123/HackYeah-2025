@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3970064195942850697
+--- !u!1001 &7799275099049408527
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 14b4ec3338b0ff24f93fe399059399f0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -31.647713
+      value: -24.375416
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 14b4ec3338b0ff24f93fe399059399f0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.31180334
+      value: -0.44795084
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 14b4ec3338b0ff24f93fe399059399f0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.959174
+      value: -8.226225
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 14b4ec3338b0ff24f93fe399059399f0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -51,63 +51,13 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 14b4ec3338b0ff24f93fe399059399f0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 9719081e59cccae4d8fe11c12c6a3dca, type: 2}
+      objectReference: {fileID: 2100000, guid: d19b948a1af460447b5b1fa662f14fe0, type: 2}
     - target: {fileID: 919132149155446097, guid: 14b4ec3338b0ff24f93fe399059399f0, type: 3}
       propertyPath: m_Name
-      value: stone3
+      value: SceneryRock3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 14b4ec3338b0ff24f93fe399059399f0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3680477638745822340}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 14b4ec3338b0ff24f93fe399059399f0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 782970425361695103}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14b4ec3338b0ff24f93fe399059399f0, type: 3}
---- !u!1 &4312734905464692184 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 14b4ec3338b0ff24f93fe399059399f0, type: 3}
-  m_PrefabInstance: {fileID: 3970064195942850697}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &3680477638745822340
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4312734905464692184}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -49471444183400055, guid: 14b4ec3338b0ff24f93fe399059399f0, type: 3}
---- !u!114 &782970425361695103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4312734905464692184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8b85565a60a41348bb534b515c94162, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DiggingObjectComponent
-  scaleToReduce: 1
-  objectHP: 5
-  VFX: {fileID: 0}
-  VFXvelocityVector: {x: 0, y: 0, z: 0}
-  VFXsecondaryColor: {r: 0, g: 0, b: 0, a: 0}
