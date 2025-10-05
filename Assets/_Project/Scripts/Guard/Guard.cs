@@ -46,6 +46,7 @@ public class Guard : MonoBehaviour
         Speed = Vector3.Distance(transform.position, lastPosition) / Time.deltaTime;
         
         lastPosition = transform.position;
+        Debug.Log(Speed);
     }
 
     private void UpdateAnimator()
