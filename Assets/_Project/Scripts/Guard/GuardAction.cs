@@ -33,10 +33,12 @@ public class MoveAction : GuardAction
 {
     [SerializeField]
     private SplineContainer spline;
+    [SerializeField]
+    private float moveSpeed = 6;
 
     public override async UniTask Execute(Guard guard)
     {
-        await guard.MoveAlongSpline(spline);
+        await guard.MoveAlongSpline(spline, moveSpeed);
     }
 }
 

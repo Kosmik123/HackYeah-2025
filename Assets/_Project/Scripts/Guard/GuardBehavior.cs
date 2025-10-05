@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 [System.Serializable]   
 public class GuardBehavior
@@ -31,20 +29,11 @@ public class GuardBehavior
         {
             foreach (var action in actions)
                 await action.Execute(guard);
-            guard.OnPathEnded += Guard_OnPathEnded;
+            OnFinished?.Invoke(this);
         }
-        catch (Exception e)
+        catch (System.Exception e)
         {
             Debug.LogError(e);
         }
     }
-
-
-    private void Guard_OnPathEnded(Guard guard)
-    {
-        guard.OnPathEnded -= Guard_OnPathEnded;
-        OnFinished?.Invoke(this);
-    }
 }
-
-
