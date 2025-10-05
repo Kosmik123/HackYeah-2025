@@ -221,12 +221,12 @@ MonoBehaviour:
     - rid: 8408759374236877062
     actions:
     - rid: 8408759374236877056
-    - rid: 8408759374236877057
+    - rid: 8408759374236877078
     - rid: 8408759374236877058
   - conditions:
     - rid: 8408759374236877075
     - rid: 8408759374236877076
-    - rid: 8408759374236877077
+    - rid: 8408759374236877080
     actions:
     - rid: 8408759374236877056
     - rid: 519199403777458262
@@ -249,16 +249,12 @@ MonoBehaviour:
       type: {class: MoveAction, ns: , asm: Assembly-CSharp}
       data:
         spline: {fileID: 0}
-        moveSpeed: 0
-    - rid: 8408759374236877057
-      type: {class: WaitAction, ns: , asm: Assembly-CSharp}
-      data:
-        waitTime: 10
+        moveSpeed: 5
     - rid: 8408759374236877058
       type: {class: MoveAction, ns: , asm: Assembly-CSharp}
       data:
         spline: {fileID: 0}
-        moveSpeed: 0
+        moveSpeed: 5
     - rid: 8408759374236877060
       type: {class: HourCondition, ns: , asm: Assembly-CSharp}
       data:
@@ -279,7 +275,11 @@ MonoBehaviour:
       data:
         conditionType: 1
         hour: 8
-    - rid: 8408759374236877077
+    - rid: 8408759374236877078
+      type: {class: WaitAction, ns: , asm: Assembly-CSharp}
+      data:
+        waitTime: 10
+    - rid: 8408759374236877080
       type: {class: HourCondition, ns: , asm: Assembly-CSharp}
       data:
         conditionType: 0
