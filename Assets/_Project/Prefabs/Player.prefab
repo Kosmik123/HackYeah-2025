@@ -193,11 +193,11 @@ MonoBehaviour:
   cameraTransform: {fileID: 2220813259709129831}
   fmodStepSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1064202944
+      Data2: 1150016226
+      Data3: -1522941299
+      Data4: 18168699
+    Path: event:/SFX/Player/player_steps
 --- !u!114 &5924364399830709774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,11 +405,11 @@ MonoBehaviour:
   VFX: {fileID: 0}
   FMODEventReference:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1324386047
+      Data2: 1174785720
+      Data3: -1722270796
+      Data4: -1436665240
+    Path: event:/SFX/Player/mining
   VFXvelocityVector: {x: 0, y: 0, z: 0}
   VFXsecondaryColor: {r: 0, g: 0, b: 0, a: 0}
   damage: 1
