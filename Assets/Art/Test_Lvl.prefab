@@ -959,7 +959,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1028567501144364095}
-  - {fileID: 5728145867474119213}
   m_Father: {fileID: 8156693790752191549}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3569863870860565946
@@ -3608,6 +3607,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4312734905464692184, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3922127798356220334}
+    - targetCorrespondingSourceObject: {fileID: 4312734905464692184, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2790176757384668663}
   m_SourcePrefab: {fileID: 100100000, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
 --- !u!1 &3647939097435903626 stripped
 GameObject:
@@ -3629,6 +3631,19 @@ MonoBehaviour:
   mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
   width: 8
+--- !u!114 &2790176757384668663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3647939097435903626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d093e5a61eab2014caf6ae8516cd5605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TooltipObject
+  tooltip: Press LMB to mine
 --- !u!4 &4173647065053482032 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3499922701833127778, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
@@ -3644,7 +3659,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d61cddef046260b4c83feeb761747561, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.327
+      value: 0.668
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d61cddef046260b4c83feeb761747561, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3652,23 +3667,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d61cddef046260b4c83feeb761747561, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.642
+      value: 0.134
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d61cddef046260b4c83feeb761747561, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.004678117
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d61cddef046260b4c83feeb761747561, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d61cddef046260b4c83feeb761747561, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9999891
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d61cddef046260b4c83feeb761747561, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d61cddef046260b4c83feeb761747561, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3676,7 +3691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d61cddef046260b4c83feeb761747561, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180.536
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d61cddef046260b4c83feeb761747561, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -3703,6 +3718,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d61cddef046260b4c83feeb761747561, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2969595495077012843}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d61cddef046260b4c83feeb761747561, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1866274632032620304}
   m_SourcePrefab: {fileID: 100100000, guid: d61cddef046260b4c83feeb761747561, type: 3}
 --- !u!1 &364197961573912197 stripped
 GameObject:
@@ -3772,6 +3790,19 @@ MonoBehaviour:
   mode: 1
   color: {r: 0.62352943, g: 0.15686275, b: 0.15686275, a: 1}
   width: 8
+--- !u!114 &1866274632032620304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364197961573912197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d093e5a61eab2014caf6ae8516cd5605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TooltipObject
+  tooltip: Press LMB to move
 --- !u!4 &1028567501144364095 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d61cddef046260b4c83feeb761747561, type: 3}
@@ -4032,6 +4063,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8815887292423751678, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4132749002091214906}
+    - targetCorrespondingSourceObject: {fileID: 8815887292423751678, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 296035526981473006}
   m_SourcePrefab: {fileID: 100100000, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
 --- !u!1 &8470441539250029366 stripped
 GameObject:
@@ -4053,6 +4087,19 @@ MonoBehaviour:
   mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
   width: 8
+--- !u!114 &296035526981473006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8470441539250029366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d093e5a61eab2014caf6ae8516cd5605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TooltipObject
+  tooltip: Press LMB to mine
 --- !u!4 &9135232019499211148 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8147999517765803332, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
@@ -4919,6 +4966,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4312734905464692184, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4982067577645598460}
+    - targetCorrespondingSourceObject: {fileID: 4312734905464692184, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5911238451567925574}
   m_SourcePrefab: {fileID: 100100000, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
 --- !u!1 &2586982123635051620 stripped
 GameObject:
@@ -4940,6 +4990,19 @@ MonoBehaviour:
   mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
   width: 8
+--- !u!114 &5911238451567925574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2586982123635051620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d093e5a61eab2014caf6ae8516cd5605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TooltipObject
+  tooltip: Press LMB to mine
 --- !u!4 &2931032074288486110 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3499922701833127778, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
@@ -5270,6 +5333,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4312734905464692184, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3136020219833447793}
+    - targetCorrespondingSourceObject: {fileID: 4312734905464692184, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2761334213501790902}
   m_SourcePrefab: {fileID: 100100000, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
 --- !u!1 &2342013928922703364 stripped
 GameObject:
@@ -5291,6 +5357,19 @@ MonoBehaviour:
   mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
   width: 8
+--- !u!114 &2761334213501790902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2342013928922703364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d093e5a61eab2014caf6ae8516cd5605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TooltipObject
+  tooltip: Press LMB to mine
 --- !u!4 &3155706047063407806 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3499922701833127778, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
@@ -5363,6 +5442,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5303432686095880534, guid: e284754fe6a01124ba2f8174cdd2fe65, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6733940803764864744}
+    - targetCorrespondingSourceObject: {fileID: 5303432686095880534, guid: e284754fe6a01124ba2f8174cdd2fe65, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7822963336491620325}
   m_SourcePrefab: {fileID: 100100000, guid: e284754fe6a01124ba2f8174cdd2fe65, type: 3}
 --- !u!1 &5974236602851773906 stripped
 GameObject:
@@ -5384,6 +5466,19 @@ MonoBehaviour:
   mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
   width: 8
+--- !u!114 &7822963336491620325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5974236602851773906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d093e5a61eab2014caf6ae8516cd5605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TooltipObject
+  tooltip: Press LMB to mine
 --- !u!4 &6459024041942292328 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4814984900115467244, guid: e284754fe6a01124ba2f8174cdd2fe65, type: 3}
@@ -5514,6 +5609,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4312734905464692184, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3493427424245714366}
+    - targetCorrespondingSourceObject: {fileID: 4312734905464692184, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4765877333823290718}
   m_SourcePrefab: {fileID: 100100000, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
 --- !u!1 &2650239345667320409 stripped
 GameObject:
@@ -5535,6 +5633,19 @@ MonoBehaviour:
   mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
   width: 8
+--- !u!114 &4765877333823290718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2650239345667320409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d093e5a61eab2014caf6ae8516cd5605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TooltipObject
+  tooltip: Press LMB to mine
 --- !u!4 &3426212407648973027 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3499922701833127778, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
@@ -7760,6 +7871,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4312734905464692184, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2472327776057637784}
+    - targetCorrespondingSourceObject: {fileID: 4312734905464692184, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1000198846755536893}
   m_SourcePrefab: {fileID: 100100000, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
 --- !u!1 &149689745927756969 stripped
 GameObject:
@@ -7781,6 +7895,19 @@ MonoBehaviour:
   mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
   width: 8
+--- !u!114 &1000198846755536893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149689745927756969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d093e5a61eab2014caf6ae8516cd5605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TooltipObject
+  tooltip: Press LMB to mine
 --- !u!4 &673321866197894675 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3499922701833127778, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
@@ -7949,6 +8076,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8815887292423751678, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1668002080203191687}
+    - targetCorrespondingSourceObject: {fileID: 8815887292423751678, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1248170990532123351}
   m_SourcePrefab: {fileID: 100100000, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
 --- !u!1 &4708051982311520899 stripped
 GameObject:
@@ -7970,6 +8100,19 @@ MonoBehaviour:
   mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
   width: 8
+--- !u!114 &1248170990532123351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4708051982311520899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d093e5a61eab2014caf6ae8516cd5605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TooltipObject
+  tooltip: Press LMB to mine
 --- !u!4 &5340579738491559993 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8147999517765803332, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
@@ -9217,6 +9360,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8815887292423751678, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 521936222602953041}
+    - targetCorrespondingSourceObject: {fileID: 8815887292423751678, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4771408128850676995}
   m_SourcePrefab: {fileID: 100100000, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
 --- !u!4 &4031001187555896834 stripped
 Transform:
@@ -9243,6 +9389,19 @@ MonoBehaviour:
   mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
   width: 8
+--- !u!114 &4771408128850676995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4376142682750334136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d093e5a61eab2014caf6ae8516cd5605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TooltipObject
+  tooltip: Press LMB to mine
 --- !u!1001 &5111260508977249617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9690,137 +9849,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 663287d930c92fe4d88deb1168436968, type: 3}
   m_PrefabInstance: {fileID: 5252696441606907218}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &5257054453920943558
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1181329716251189997}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 59ad60e69e30cfc4884b805f5a578cef, type: 3}
-      propertyPath: m_LocalScale.y
-      value: -0.7208738
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 59ad60e69e30cfc4884b805f5a578cef, type: 3}
-      propertyPath: m_LocalScale.z
-      value: -0.7208737
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 59ad60e69e30cfc4884b805f5a578cef, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.148
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 59ad60e69e30cfc4884b805f5a578cef, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.159
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 59ad60e69e30cfc4884b805f5a578cef, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.032999992
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 59ad60e69e30cfc4884b805f5a578cef, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.0000063668
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 59ad60e69e30cfc4884b805f5a578cef, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.99912417
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 59ad60e69e30cfc4884b805f5a578cef, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.04184446
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 59ad60e69e30cfc4884b805f5a578cef, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.00015202076
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 59ad60e69e30cfc4884b805f5a578cef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 59ad60e69e30cfc4884b805f5a578cef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 179.983
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 59ad60e69e30cfc4884b805f5a578cef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -184.796
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 59ad60e69e30cfc4884b805f5a578cef, type: 3}
-      propertyPath: m_Name
-      value: tile
-      objectReference: {fileID: 0}
-    - target: {fileID: 3451118302482216456, guid: 59ad60e69e30cfc4884b805f5a578cef, type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3451118302482216456, guid: 59ad60e69e30cfc4884b805f5a578cef, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: e2a651b76d46b7e4ca05a52a4521640e, type: 2}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 59ad60e69e30cfc4884b805f5a578cef, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2463096685676776112}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 59ad60e69e30cfc4884b805f5a578cef, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8588505907979167008}
-  m_SourcePrefab: {fileID: 100100000, guid: 59ad60e69e30cfc4884b805f5a578cef, type: 3}
---- !u!1 &4915018177640591511 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 59ad60e69e30cfc4884b805f5a578cef, type: 3}
-  m_PrefabInstance: {fileID: 5257054453920943558}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &2463096685676776112
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4915018177640591511}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &8588505907979167008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4915018177640591511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a3b9a1a9ae4f7641954f615b8535d30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OutlineScenarioObject
-  mode: 1
-  color: {r: 0.6226415, g: 0.15566038, b: 0.15566038, a: 1}
-  width: 8
---- !u!4 &5728145867474119213 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 59ad60e69e30cfc4884b805f5a578cef, type: 3}
-  m_PrefabInstance: {fileID: 5257054453920943558}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5337786813765693244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9888,6 +9916,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8815887292423751678, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4698892749637242550}
+    - targetCorrespondingSourceObject: {fileID: 8815887292423751678, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8051027460861226765}
   m_SourcePrefab: {fileID: 100100000, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
 --- !u!1 &3480141335481608386 stripped
 GameObject:
@@ -9909,6 +9940,19 @@ MonoBehaviour:
   mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
   width: 8
+--- !u!114 &8051027460861226765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3480141335481608386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d093e5a61eab2014caf6ae8516cd5605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TooltipObject
+  tooltip: Press LMB to mine
 --- !u!4 &4251436220820271736 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8147999517765803332, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
@@ -10376,6 +10420,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8815887292423751678, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1352094050378158171}
+    - targetCorrespondingSourceObject: {fileID: 8815887292423751678, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4851393322771833477}
   m_SourcePrefab: {fileID: 100100000, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
 --- !u!1 &3875510913982228184 stripped
 GameObject:
@@ -10397,6 +10444,19 @@ MonoBehaviour:
   mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
   width: 8
+--- !u!114 &4851393322771833477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3875510913982228184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d093e5a61eab2014caf6ae8516cd5605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TooltipObject
+  tooltip: Press LMB to mine
 --- !u!4 &4504518853681691746 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8147999517765803332, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
@@ -10768,6 +10828,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5303432686095880534, guid: e284754fe6a01124ba2f8174cdd2fe65, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2884331984796970546}
+    - targetCorrespondingSourceObject: {fileID: 5303432686095880534, guid: e284754fe6a01124ba2f8174cdd2fe65, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 612570849846029710}
   m_SourcePrefab: {fileID: 100100000, guid: e284754fe6a01124ba2f8174cdd2fe65, type: 3}
 --- !u!4 &1205697734254317344 stripped
 Transform:
@@ -10794,6 +10857,19 @@ MonoBehaviour:
   mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
   width: 8
+--- !u!114 &612570849846029710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013301581617337754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d093e5a61eab2014caf6ae8516cd5605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TooltipObject
+  tooltip: Press LMB to mine
 --- !u!1001 &6000100072389258405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11406,6 +11482,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5303432686095880534, guid: e284754fe6a01124ba2f8174cdd2fe65, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3419864594790074392}
+    - targetCorrespondingSourceObject: {fileID: 5303432686095880534, guid: e284754fe6a01124ba2f8174cdd2fe65, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4601119562845734709}
   m_SourcePrefab: {fileID: 100100000, guid: e284754fe6a01124ba2f8174cdd2fe65, type: 3}
 --- !u!1 &1218661779515784467 stripped
 GameObject:
@@ -11427,6 +11506,19 @@ MonoBehaviour:
   mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
   width: 8
+--- !u!114 &4601119562845734709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218661779515784467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d093e5a61eab2014caf6ae8516cd5605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TooltipObject
+  tooltip: Press LMB to mine
 --- !u!4 &1991258173101729705 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4814984900115467244, guid: e284754fe6a01124ba2f8174cdd2fe65, type: 3}
@@ -11791,6 +11883,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9035076368247236002, guid: e51fc584690db464bb9e2c1be1b37192, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4965300564196299614}
+    - targetCorrespondingSourceObject: {fileID: 9035076368247236002, guid: e51fc584690db464bb9e2c1be1b37192, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8411088548254482268}
   m_SourcePrefab: {fileID: 100100000, guid: e51fc584690db464bb9e2c1be1b37192, type: 3}
 --- !u!1 &2778244163552302744 stripped
 GameObject:
@@ -11812,6 +11907,19 @@ MonoBehaviour:
   mode: 0
   color: {r: 0.19591577, g: 0.38679248, b: 0.0784532, a: 1}
   width: 8
+--- !u!114 &8411088548254482268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2778244163552302744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d093e5a61eab2014caf6ae8516cd5605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TooltipObject
+  tooltip: Press LMB to spin
 --- !u!4 &3810739499090925388 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8002671330336711798, guid: e51fc584690db464bb9e2c1be1b37192, type: 3}
