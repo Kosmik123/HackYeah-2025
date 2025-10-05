@@ -235,6 +235,7 @@ MonoBehaviour:
   - conditions:
     - rid: 8408759374236877109
     - rid: 8408759374236877110
+    - rid: 8408759374236877130
     actions:
     - rid: 8408759374236877111
     - rid: 8408759374236877113
@@ -317,6 +318,11 @@ MonoBehaviour:
     - rid: 8408759374236877120
       type: {class: InteractionUnlock, ns: , asm: Assembly-CSharp}
       data: 
+    - rid: 8408759374236877130
+      type: {class: DayCondition, ns: , asm: Assembly-CSharp}
+      data:
+        conditionType: 0
+        day: 1
 --- !u!1001 &5159291275707915975
 PrefabInstance:
   m_ObjectHideFlags: 0
