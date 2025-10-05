@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1606262144069052342}
   - component: {fileID: 2156201201684986516}
   - component: {fileID: 6519272701448509013}
+  - component: {fileID: 5669970453570495021}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -63,6 +64,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 55
   cameraTransform: {fileID: 2220813259709129831}
+  fmodStepSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!114 &5924364399830709774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,6 +344,23 @@ MonoBehaviour:
   cutsceneLength: 10
   fadeoutDuration: 4
   fadeoutImage: {fileID: 0}
+--- !u!114 &5669970453570495021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080636076096208276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b700c80ffd4c354fb5f0e9e5788dd18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EndInCell
+  warden: {fileID: 0}
+  splineDuration: 5
+  guardSpline: {fileID: 0}
+  playerAwaitPosition: {fileID: 0}
+  FadeOutImage: {fileID: 0}
 --- !u!1 &3821276427994330946
 GameObject:
   m_ObjectHideFlags: 0

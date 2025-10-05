@@ -459,6 +459,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c764bb1ad219a714e95b2b1f59bb3681, type: 3}
+--- !u!1 &174245804 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8088203896476555747, guid: c764bb1ad219a714e95b2b1f59bb3681, type: 3}
+  m_PrefabInstance: {fileID: 174245803}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &243691615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -966,6 +971,22 @@ GameObject:
 --- !u!114 &761405741 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 446729993049654736, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+  m_PrefabInstance: {fileID: 761405739}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab5c7d4c32e743048dfca98e2d5914f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineContainer
+--- !u!1 &761405742 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1303666105632912909, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+  m_PrefabInstance: {fileID: 761405739}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &761405743 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5240341981582986782, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
   m_PrefabInstance: {fileID: 761405739}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -2221,6 +2242,22 @@ PrefabInstance:
       propertyPath: TiltAxis.Value
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5669970453570495021, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: warden
+      value: 
+      objectReference: {fileID: 174245804}
+    - target: {fileID: 5669970453570495021, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: guardSpline
+      value: 
+      objectReference: {fileID: 761405743}
+    - target: {fileID: 5669970453570495021, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: FadeOutImage
+      value: 
+      objectReference: {fileID: 708682569}
+    - target: {fileID: 5669970453570495021, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: playerAwaitPosition
+      value: 
+      objectReference: {fileID: 761405742}
     - target: {fileID: 6519272701448509013, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
       propertyPath: fadeoutImage
       value: 
