@@ -25,8 +25,8 @@ public class GameManager : MonoBehaviour
 
     public bool CheckBedZone()
     {
-        if (CheckHowMuchInBounds() < requiredCornersWithinBounds) return false;
-        return true;
+        if (CheckHowMuchInBounds() < requiredCornersWithinBounds) return true;
+        return false;
     }
 
     public bool CheckPrisonZone()

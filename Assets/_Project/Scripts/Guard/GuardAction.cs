@@ -16,9 +16,15 @@ public class WaitAction : GuardAction
     [SerializeField]
     private float waitTime;
 
+    GuardDetection detection;
+    
     public override async UniTask Execute(Guard guard)
     {
+        detection = guard.GetComponent<GuardDetection>();
+        detection.StartLookingForPlayer();
         await UniTask.WaitForSeconds(waitTime);
+        detection.StopLookingForPlayer();
+        // Finished();
     }
 }
 
