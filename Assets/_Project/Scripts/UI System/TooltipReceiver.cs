@@ -9,6 +9,11 @@ public class TooltipReceiver : MonoBehaviour
     
     private void Update()
     {
+        if (GameManager.Instance.InteractionBlocked)
+        {
+            return;
+        }
+        
         var ray = new Ray(transform.position, transform.forward);
         var hits = Physics.RaycastAll(ray, 2f);
         var found = false;

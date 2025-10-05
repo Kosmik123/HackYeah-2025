@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     private BoxCollider bedCollider;
     private BoxCollider _prisonCellCollider;
 
+    public bool InteractionBlocked { get; set; } = true;
+
     private void Awake()
     {
         Instance = this;

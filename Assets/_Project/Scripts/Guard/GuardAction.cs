@@ -71,3 +71,13 @@ public class ShowScenarioObjects : GuardAction
         return UniTask.CompletedTask;
     }
 }
+
+[System.Serializable]
+public class InteractionUnlock : GuardAction
+{
+    public override UniTask Execute(Guard guard)
+    {
+        GameManager.Instance.InteractionBlocked = false;
+        return UniTask.CompletedTask;
+    }
+}
