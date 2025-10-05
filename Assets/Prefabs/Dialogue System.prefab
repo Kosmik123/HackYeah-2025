@@ -78,3 +78,21 @@ MonoBehaviour:
       - Text: Even if you succeded, there is not any hope
         LetterPause: 0.15
         CompleteDelay: 2
+  - Key: not_spinning
+    Dialogue:
+      Slice:
+      - Text: You forgot to do your work (spin the crank)
+        LetterPause: 0.15
+        CompleteDelay: 2
+  - Key: hole_visible
+    Dialogue:
+      Slice:
+      - Text: The guard has seen your escape tunnel
+        LetterPause: 0.15
+        CompleteDelay: 2
+  - Key: not_in_cell
+    Dialogue:
+      Slice:
+      - Text: You were not in the cell when the guard checked it
+        LetterPause: 0.15
+        CompleteDelay: 2
