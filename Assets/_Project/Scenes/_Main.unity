@@ -1627,9 +1627,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1952570065988177851, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: FMODEventReference.Path
+      value: event:/SFX/Player/mining
+      objectReference: {fileID: 0}
+    - target: {fileID: 1952570065988177851, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: FMODEventReference.Guid.Data1
+      value: 1324386047
+      objectReference: {fileID: 0}
+    - target: {fileID: 1952570065988177851, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: FMODEventReference.Guid.Data2
+      value: 1174785720
+      objectReference: {fileID: 0}
+    - target: {fileID: 1952570065988177851, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: FMODEventReference.Guid.Data3
+      value: -1722270796
+      objectReference: {fileID: 0}
+    - target: {fileID: 1952570065988177851, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: FMODEventReference.Guid.Data4
+      value: -1436665240
+      objectReference: {fileID: 0}
     - target: {fileID: 2080636076096208276, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6551744473957633641, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: fmodStepSound.Path
+      value: event:/SFX/Player/player_steps
+      objectReference: {fileID: 0}
+    - target: {fileID: 6551744473957633641, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: fmodStepSound.Guid.Data1
+      value: 1064202944
+      objectReference: {fileID: 0}
+    - target: {fileID: 6551744473957633641, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: fmodStepSound.Guid.Data2
+      value: 1150016226
+      objectReference: {fileID: 0}
+    - target: {fileID: 6551744473957633641, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: fmodStepSound.Guid.Data3
+      value: -1522941299
+      objectReference: {fileID: 0}
+    - target: {fileID: 6551744473957633641, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: fmodStepSound.Guid.Data4
+      value: 18168699
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

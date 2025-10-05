@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,6 +15,9 @@ public class PlayerController : MonoBehaviour
     public LayerMask ceilingMask;
 
     public Transform cameraTransform;
+    
+    [SerializeField] private EventReference fmodStepSound;
+
     
     private Vector2 moveInput;
     private Vector2 lookInput;
