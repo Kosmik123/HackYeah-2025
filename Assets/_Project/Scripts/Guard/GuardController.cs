@@ -25,6 +25,8 @@ public class GuardController : MonoBehaviour
 
     public void ActivateAction(int index)
     {
+        WorldTime.OnTimeChanged -= DecideAction;
+
         currentActionIndex = index;
         behaviors[currentActionIndex].OnFinished += GuardController_OnFinished;
         behaviors[currentActionIndex].StartEvent(guard);
