@@ -20,17 +20,18 @@ public class GuardDetection : MonoBehaviour
     {
         _splineAnimate = transform.gameObject.GetComponent<SplineAnimate>();
         _detect = true;
-        _guard.OnPathEnded += OnPathEnded;
+        //_guard.OnPathEnded += OnPathEnded;
+        _reachedCell = true;
     }
 
-    private void OnPathEnded(Guard obj)
+    /*private void OnPathEnded(Guard obj)
     {
         if (_reachedCell)
         {
             StartLookingForPlayer();
         }
-        _reachedCell = !_reachedCell;
-    }
+        _reachedCell = true;
+    }*/
 
     // Update is called once per frame
     [ContextMenu("Test")]
