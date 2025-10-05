@@ -1,0 +1,11 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Art/ui/StyleButtons.uss?fileID=7433441132597879392&amp;guid=4bbcfe64cfd33044d94a058809f89348&amp;type=3#StyleButtons" />
+    <ui:VisualElement name="Background" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/ui/a7de20fe-bdbc-4e3c-acb0-afd39b56e3a2.jpg?fileID=2800000&amp;guid=be827e75e08aac745b46aca77ef7256a&amp;type=3#a7de20fe-bdbc-4e3c-acb0-afd39b56e3a2&quot;); background-color: rgba(0, 0, 0, 0); -unity-background-image-tint-color: rgb(255, 200, 0);">
+        <ui:VisualElement name="Menu" style="flex-grow: 1; background-size: 100% 100%; width: 40%; height: 100%; background-color: rgba(26, 26, 26, 0.25); align-items: center;">
+            <ui:VisualElement name="Buttons" style="flex-grow: 1; background-color: rgba(173, 109, 109, 0); width: 68%; height: 0%; justify-content: center; align-self: center; align-content: center; background-size: 100% 100%; border-top-width: 0; margin-top: 50%; padding-top: 0%; margin-bottom: 10%; padding-bottom: 0; bottom: -10%;">
+                <ui:Button text="Start" name="StartButton" class="blue-button" />
+                <ui:Button text="Quit Game" name="QuitButton" class="blue-button" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
