@@ -8,16 +8,23 @@ public class PlayerController : MonoBehaviour
     public float jumpStrength = 5f;
     public float rotationSpeed = 1f;
 
+    [SerializeField, Range(0, 1)]
+    private float crouchMovementModified = 0.5f;
+
     public float crouchHeight = 1f;
     public float standHeight = 2f;
     public float crouchCenterY = 0f;
     public float standCenterY = 0f;
     public LayerMask ceilingMask;
 
-    public Transform cameraTransform;
-    
     [SerializeField] private EventReference fmodStepSound;
 
+    [SerializeField]
+    private HeightController head;
+    [SerializeField]
+    private HeightController body;
+    [SerializeField]
+    private Renderer bodyRenderer;
     
     private Vector2 moveInput;
     private Vector2 lookInput;
@@ -30,6 +37,9 @@ public class PlayerController : MonoBehaviour
     private PlayerDiggingComponent _playerDiggingComponent;
     private Animator _playerAnimator;
     private DiggingObjectComponent _lastHitDiggingObjectComponent;
+
+    [SerializeField]
+    private float crouchingBodyPosition;
 
     private RaycastHit _lastHitInfo;
     void Awake()
@@ -63,9 +73,14 @@ public class PlayerController : MonoBehaviour
 
         verticalVelocity += Physics.gravity.y * Time.deltaTime;
 
-        Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
-        move.y = verticalVelocity;
-        controller.Move(moveSpeed * Time.deltaTime * move);
+        Vector3 direction = transform.right * moveInput.x + transform.forward * moveInput.y;
+        direction.y = verticalVelocity;
+
+        float speed = moveSpeed;
+        if (isCrouching)
+            speed *= crouchMovementModified;
+
+        controller.Move(speed * Time.deltaTime * direction);
 
         //rotate player left right
         float mouseX = lookInput.x * rotationSpeed;
@@ -168,9 +183,6 @@ public class PlayerController : MonoBehaviour
         _playerDiggingComponent.TryDigObject(_lastHitDiggingObjectComponent, _lastHitInfo);
     }
 
-
-
-
     public void OnCrouch(InputAction.CallbackContext context)
     {
         Debug.Log("Crouch Input: " + context.phase);
@@ -189,23 +201,25 @@ public class PlayerController : MonoBehaviour
     private void SetCrouch(bool crouch)
     {
         isCrouching = crouch;
-        controller.height = crouch ? crouchHeight : standHeight;
         controller.radius = crouch ? 0.30f : _defaultRadius;
-        
-        cameraTransform.localPosition = new Vector3(
-            cameraTransform.localPosition.x,
-            crouch ? crouchHeight/2f : standHeight/2f,
-            cameraTransform.localPosition.z);
+        controller.height = crouch ? crouchHeight : standHeight;
+
+        var center = controller.center;
+        center.y = Mathf.Max(controller.height / 2, controller.radius);
+        controller.center = center;
+
+        head.SetHeight(crouch ? crouchHeight : standHeight);
+        body.SetHeight(crouch ? crouchingBodyPosition : 0);
     }
 
     private bool IsCeilingAbove()
     {
-        Vector3 origin = transform.position;
+        Vector3 origin = head.transform.position;
         float rayLength = 1.6f;
         float offset = 0.15f; // adjust as needed
 
-        // Center, left, and right origins
-        Vector3[] origins = {
+        // Center, right and back origins
+        System.Span<Vector3> origins = stackalloc Vector3[]{
             origin,
             origin + transform.right * offset,
             origin - transform.forward * offset

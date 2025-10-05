@@ -6,9 +6,13 @@ public class GuardDetection : MonoBehaviour
 {
     [SerializeField] private GameObject _player;
     [SerializeField] private Guard _guard;
+    [SerializeField] private GameObject crank;
+    [SerializeField] private int maxFailAmount=3;
     private bool _detect = false;
     private bool _prison;
     private bool _bed;
+    private bool _crank;
+    private int _failQuotaCounter;
     private bool _reachedCell;
     private SplineAnimate _splineAnimate;
 
@@ -51,6 +55,12 @@ public class GuardDetection : MonoBehaviour
         {
             _prison = GameManager.Instance.CheckPrisonZone();
             _bed = GameManager.Instance.CheckBedZone();
+            _crank = crank.GetComponent<CrankAnim>().GetIsPlaying();
+            if (!_crank)
+            {
+                WarnPlayer();
+                _failQuotaCounter++;
+            }
             if (_prison || _bed)
             {
                 LooseConditionMet();
@@ -63,6 +73,17 @@ public class GuardDetection : MonoBehaviour
         yield return null;
     }
 
+    private void WarnPlayer()
+    {
+        if (_failQuotaCounter >= maxFailAmount)
+        {
+            _crank = true;
+            LooseConditionMet();
+            _detect = false;
+            StopCoroutine(Detect());
+        }
+    }
+
     private void LooseConditionMet()
     {
         if (_prison)
@@ -72,10 +93,17 @@ public class GuardDetection : MonoBehaviour
         else if (_bed)
         {
             Debug.Log("Guard noticed the hole");
+            EndGameInCell();
         }
-        else
+        else if (_crank)
         {
-            Debug.LogError("Unhandled loose condition");
+            Debug.Log("Failed at cranking too many times!");
+            EndGameInCell();
         }
+    }
+
+    private void EndGameInCell()
+    {
+        _player.GetComponent<EndInCell>().EndGameInCell();
     }
 }

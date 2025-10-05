@@ -4,6 +4,7 @@ using UnityEngine;
 public class OutlineScenarioManager : MonoBehaviour
 {
     public List<OutlineScenario> Scenarios;
+    public ScenarioType CurrentScenario => scenarioType;
 
     private ScenarioType scenarioType;
     
@@ -16,6 +17,10 @@ public class OutlineScenarioManager : MonoBehaviour
             var isActiveScenario = scenario.ScenarioType == scenarioType;
             foreach (var obj in scenario.ScenarioObjects)
             {
+                if (obj == null)
+                {
+                    continue;
+                }
                 obj.ShowOutline(isActiveScenario);
             }
         }

@@ -12,7 +12,6 @@ public class PlayerCaught : MonoBehaviour
     [SerializeField] private float distanceToStop = 1f;
     [SerializeField] private SplineContainer ventSpline;
     [SerializeField] private Image FadeOutImage;
-    private GameObject _newSplineContainerObject;
 
     private void Start()
     {

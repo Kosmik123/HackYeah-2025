@@ -63,4 +63,9 @@ public class CrankAnim : MonoBehaviour
         isPlaying = false;
         _emitter.Stop();
     }
+
+    public bool GetIsPlaying()
+    {
+        return isPlaying;
+    }
 }
