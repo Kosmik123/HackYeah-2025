@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e70942d0fbfff8643b84e4590ef2b93e, type: 3}
   m_Name: World Time
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineBlenderSettings
-  timeScale: 1
-  startingHour: 6
-  startingMinute: 0
+  timeScale: 5
+  startingHour: 5
+  startingMinute: 55
