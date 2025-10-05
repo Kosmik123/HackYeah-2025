@@ -7,7 +7,7 @@ namespace HackYeah2025
         public event System.Action OnTimeChanged;
 
         public const float MinutesInHour = 60f;
-        public const float HoursInDay = 24f;
+        public const float HoursInDay = 12f;
 
         private static WorldTime instance;
         public static WorldTime Instance
