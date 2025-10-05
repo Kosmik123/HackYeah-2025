@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public float standCenterY = 0f;
     public LayerMask ceilingMask;
 
+    public Transform cameraTransform;
+    
     private Vector2 moveInput;
     private Vector2 lookInput;
     private CharacterController controller;
@@ -182,7 +184,12 @@ public class PlayerController : MonoBehaviour
     {
         isCrouching = crouch;
         controller.height = crouch ? crouchHeight : standHeight;
-        controller.radius = crouch ? 0.15f : _defaultRadius;
+        controller.radius = crouch ? 0.30f : _defaultRadius;
+        
+        cameraTransform.localPosition = new Vector3(
+            cameraTransform.localPosition.x,
+            crouch ? crouchHeight/2f : standHeight/2f,
+            cameraTransform.localPosition.z);
     }
 
     private bool IsCeilingAbove()
