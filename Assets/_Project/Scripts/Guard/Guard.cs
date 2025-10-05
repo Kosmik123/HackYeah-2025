@@ -42,6 +42,7 @@ public class Guard : MonoBehaviour
 
     public void EmitFootstep()
     {
+        Debug.Log("Step");
         footstepEmitter.Stop();
         footstepEmitter.Play();
     }
