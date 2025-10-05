@@ -131,7 +131,7 @@ public class PlayerController : MonoBehaviour
                     break;
                 }
                 
-                _lastHitDiggingObjectComponent = hit.transform.gameObject.GetComponent<DiggingObjectComponent>();
+                _lastHitDiggingObjectComponent = hit.transform.gameObject.GetComponentInChildren<DiggingObjectComponent>();
                 if (_lastHitDiggingObjectComponent)
                 {
                     var dug = _playerDiggingComponent.CanDigObject();
