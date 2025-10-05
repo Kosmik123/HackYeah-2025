@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
         controller.Move(moveSpeed * Time.deltaTime * move);
 
         //rotate player left right
-        float mouseX = lookInput.x * rotationSpeed * Time.deltaTime;
+        float mouseX = lookInput.x * rotationSpeed;
         transform.Rotate(Vector3.up * mouseX);
         var currentSpeed = controller.velocity.magnitude;
         _playerAnimator.SetFloat("Speed", currentSpeed);
