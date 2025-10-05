@@ -15,6 +15,7 @@ public class DiggingObjectComponent : MonoBehaviour
     private float _baseScale = 0;
     private float _scaleReduceAmount;
     private VFXEventAttribute VFXEventAttribute;
+    private bool _pendingDestroy;
 
     public Action<bool> OnHit;
 
@@ -116,6 +117,8 @@ public class DiggingObjectComponent : MonoBehaviour
 
     private void Despawn()
     {
+        if (_pendingDestroy) return;
+        _pendingDestroy = true;
         Destroy(gameObject);
     }
 
