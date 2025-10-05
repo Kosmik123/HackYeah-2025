@@ -1,6 +1,9 @@
 using System.Collections;
+using FMOD.Studio;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.Splines;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 public class GuardDetection : MonoBehaviour
 {
@@ -8,6 +11,7 @@ public class GuardDetection : MonoBehaviour
     [SerializeField] private Guard _guard;
     [SerializeField] private GameObject crank;
     [SerializeField] private int maxFailAmount=3;
+    [SerializeField] private EventReference hearthbeating;
     private bool _detect = false;
     private bool _prison;
     private bool _bed;
@@ -15,6 +19,7 @@ public class GuardDetection : MonoBehaviour
     private int _failQuotaCounter;
     private bool _reachedCell;
     private SplineAnimate _splineAnimate;
+    private EventInstance _hearthbeatingInstance;
 
     void Start()
     {
@@ -37,12 +42,15 @@ public class GuardDetection : MonoBehaviour
     [ContextMenu("Test")]
     public void StartLookingForPlayer()
     {
+        _hearthbeatingInstance = RuntimeManager.CreateInstance(hearthbeating);
+        _hearthbeatingInstance.start();
         _detect = true;
         StartCoroutine(Detect());
     }
 
     public void StopLookingForPlayer()
     {
+        _hearthbeatingInstance.stop(STOP_MODE.ALLOWFADEOUT);
         Debug.Log("Guard is Leaving...");
         _detect = false;
         StopCoroutine(Detect());
