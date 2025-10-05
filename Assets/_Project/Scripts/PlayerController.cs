@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float crouchingBodyPosition;
 
+    private RaycastHit _lastHitInfo;
     void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -82,7 +83,7 @@ public class PlayerController : MonoBehaviour
         controller.Move(speed * Time.deltaTime * direction);
 
         //rotate player left right
-        float mouseX = lookInput.x * rotationSpeed * Time.deltaTime;
+        float mouseX = lookInput.x * rotationSpeed;
         transform.Rotate(Vector3.up * mouseX);
         var currentSpeed = controller.velocity.magnitude;
         _playerAnimator.SetFloat("Speed", currentSpeed);
@@ -153,6 +154,7 @@ public class PlayerController : MonoBehaviour
                 }
                 
                 _lastHitDiggingObjectComponent = hit.transform.gameObject.GetComponentInChildren<DiggingObjectComponent>();
+                _lastHitInfo = hit;
                 if (_lastHitDiggingObjectComponent)
                 {
                     var dug = _playerDiggingComponent.CanDigObject();
@@ -178,7 +180,7 @@ public class PlayerController : MonoBehaviour
 
     public void DiggingAnimationEnded()
     {
-        _playerDiggingComponent.TryDigObject(_lastHitDiggingObjectComponent);
+        _playerDiggingComponent.TryDigObject(_lastHitDiggingObjectComponent, _lastHitInfo);
     }
 
     public void OnCrouch(InputAction.CallbackContext context)

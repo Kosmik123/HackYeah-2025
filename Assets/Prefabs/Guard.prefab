@@ -223,10 +223,37 @@ MonoBehaviour:
     - rid: 8408759374236877056
     - rid: 8408759374236877057
     - rid: 8408759374236877058
+  - conditions:
+    - rid: 519199403777458243
+    - rid: 519199403777458245
+    actions:
+    - rid: 8408759374236877056
+    - rid: 519199403777458262
+    - rid: 519199403777458335
+    - rid: 8408759374236877058
   currentActionIndex: -1
   references:
     version: 2
     RefIds:
+    - rid: 519199403777458243
+      type: {class: DayCondition, ns: , asm: Assembly-CSharp}
+      data:
+        conditionType: 1
+        day: 1
+    - rid: 519199403777458245
+      type: {class: HourCondition, ns: , asm: Assembly-CSharp}
+      data:
+        conditionType: 1
+        hour: 8
+    - rid: 519199403777458262
+      type: {class: StartDialogueAction, ns: , asm: Assembly-CSharp}
+      data:
+        dialogueSystem: {fileID: 0}
+        dialogueKey: game_start_dialogue
+    - rid: 519199403777458335
+      type: {class: ShowScenarioObjects, ns: , asm: Assembly-CSharp}
+      data:
+        scenarioManager: {fileID: 0}
     - rid: 8408759374236877056
       type: {class: MoveAction, ns: , asm: Assembly-CSharp}
       data:
@@ -234,7 +261,7 @@ MonoBehaviour:
     - rid: 8408759374236877057
       type: {class: WaitAction, ns: , asm: Assembly-CSharp}
       data:
-        waitTime: 6
+        waitTime: 10
     - rid: 8408759374236877058
       type: {class: MoveAction, ns: , asm: Assembly-CSharp}
       data:
