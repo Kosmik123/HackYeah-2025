@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1952570065988177851}
   - component: {fileID: 1606262144069052342}
   - component: {fileID: 2156201201684986516}
+  - component: {fileID: 6519272701448509013}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -295,6 +296,7 @@ MonoBehaviour:
   playerPullingTime: 5
   distanceToStop: 1
   ventSpline: {fileID: 0}
+  FadeOutImage: {fileID: 0}
 --- !u!114 &2156201201684986516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,6 +320,22 @@ MonoBehaviour:
   m_ObjectForwardAxis: 2
   m_ObjectUpAxis: 1
   m_StartOffset: 0
+--- !u!114 &6519272701448509013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080636076096208276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28eb0eb85f025834da77afc122c86d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WinEnd
+  splineContainer: {fileID: 0}
+  cutsceneLength: 10
+  fadeoutDuration: 4
+  fadeoutImage: {fileID: 0}
 --- !u!1 &3821276427994330946
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,6 +349,7 @@ GameObject:
   - component: {fileID: 214226415520766574}
   - component: {fileID: 5521053014138112996}
   - component: {fileID: 2832839838239926268}
+  - component: {fileID: 832410312319045065}
   m_Layer: 6
   m_Name: PlayerCamera
   m_TagString: Untagged
@@ -490,6 +509,29 @@ MonoBehaviour:
         DecelTime: 0.1
   PlayerIndex: -1
   AutoEnableInputs: 1
+--- !u!114 &832410312319045065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3821276427994330946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineAnimate
+  m_Target: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_LoopMode: 0
+  m_Method: 0
+  m_Duration: 1
+  m_MaxSpeed: 10
+  m_EasingMode: 0
+  m_AlignmentMode: 1
+  m_ObjectForwardAxis: 2
+  m_ObjectUpAxis: 1
+  m_StartOffset: 0
 --- !u!1001 &6020099689318910959
 PrefabInstance:
   m_ObjectHideFlags: 0
