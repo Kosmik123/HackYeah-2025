@@ -15,16 +15,18 @@ public class GuardController : MonoBehaviour
 
     private void OnEnable()
     {
-        WorldTime.OnTimeChanged += DecideAction;
+        WorldTime.Instance.OnTimeChanged += DecideAction;
     }
 
     private void OnDisable()
     {
-        WorldTime.OnTimeChanged -= DecideAction;
+        WorldTime.Instance.OnTimeChanged -= DecideAction;
     }
 
     public void ActivateAction(int index)
     {
+        WorldTime.Instance.OnTimeChanged -= DecideAction;
+
         currentActionIndex = index;
         behaviors[currentActionIndex].OnFinished += GuardController_OnFinished;
         behaviors[currentActionIndex].StartEvent(guard);
@@ -50,6 +52,6 @@ public class GuardController : MonoBehaviour
         finishedEvent.OnFinished -= GuardController_OnFinished;
         previousActionIndex = currentActionIndex;
         currentActionIndex = -1;
-        WorldTime.OnTimeChanged += DecideAction;
+        WorldTime.Instance.OnTimeChanged += DecideAction;
     }
 }

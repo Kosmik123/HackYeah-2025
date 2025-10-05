@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     public bool CheckPrisonZone()
     {
-        return _prisonCellCollider.bounds.Contains(playerRef.transform.position);
+        return !_prisonCellCollider.bounds.Contains(playerRef.transform.position);
     }
 
     [ContextMenu("Test if player is within prison cell")]

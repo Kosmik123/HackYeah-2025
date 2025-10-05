@@ -57,3 +57,24 @@ MonoBehaviour:
       - Text: test 678
         LetterPause: 0.15
         CompleteDelay: 1
+  - Key: game_start_dialogue
+    Dialogue:
+      Slice:
+      - Text: Hi prisoner
+        LetterPause: 0.15
+        CompleteDelay: 2
+      - Text: You need to spin that crank to keep going
+        LetterPause: 0.15
+        CompleteDelay: 2
+      - Text: Or else you would not see the next day coming
+        LetterPause: 0.15
+        CompleteDelay: 2
+      - Text: Have fun
+        LetterPause: 0.15
+        CompleteDelay: 2
+      - Text: And do not think about escaping this place
+        LetterPause: 0.15
+        CompleteDelay: 2
+      - Text: Even if you succeded, there is not any hope
+        LetterPause: 0.15
+        CompleteDelay: 2
