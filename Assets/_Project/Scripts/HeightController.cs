@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HeadController : MonoBehaviour
+public class HeightController : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField]

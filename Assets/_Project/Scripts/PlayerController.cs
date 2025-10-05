@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     public float jumpStrength = 5f;
     public float rotationSpeed = 1f;
 
+    [SerializeField, Range(0, 1)]
+    private float crouchMovementModified = 0.5f;
+
     public float crouchHeight = 1f;
     public float standHeight = 2f;
     public float crouchCenterY = 0f;
@@ -17,7 +20,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private EventReference fmodStepSound;
 
     [SerializeField]
-    private HeadController headController;
+    private HeightController head;
+    [SerializeField]
+    private HeightController body;
     [SerializeField]
     private Renderer bodyRenderer;
     
@@ -32,6 +37,9 @@ public class PlayerController : MonoBehaviour
     private PlayerDiggingComponent _playerDiggingComponent;
     private Animator _playerAnimator;
     private DiggingObjectComponent _lastHitDiggingObjectComponent;
+
+    [SerializeField]
+    private float crouchingBodyPosition;
 
     void Awake()
     {
@@ -64,9 +72,14 @@ public class PlayerController : MonoBehaviour
 
         verticalVelocity += Physics.gravity.y * Time.deltaTime;
 
-        Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
-        move.y = verticalVelocity;
-        controller.Move(moveSpeed * Time.deltaTime * move);
+        Vector3 direction = transform.right * moveInput.x + transform.forward * moveInput.y;
+        direction.y = verticalVelocity;
+
+        float speed = moveSpeed;
+        if (isCrouching)
+            speed *= crouchMovementModified;
+
+        controller.Move(speed * Time.deltaTime * direction);
 
         //rotate player left right
         float mouseX = lookInput.x * rotationSpeed * Time.deltaTime;
@@ -193,13 +206,13 @@ public class PlayerController : MonoBehaviour
         center.y = Mathf.Max(controller.height / 2, controller.radius);
         controller.center = center;
 
-        bodyRenderer.enabled = !crouch;
-        headController.SetHeight(crouch ? crouchHeight : standHeight);
+        head.SetHeight(crouch ? crouchHeight : standHeight);
+        body.SetHeight(crouch ? crouchingBodyPosition : 0);
     }
 
     private bool IsCeilingAbove()
     {
-        Vector3 origin = headController.transform.position;
+        Vector3 origin = head.transform.position;
         float rayLength = 1.6f;
         float offset = 0.15f; // adjust as needed
 
