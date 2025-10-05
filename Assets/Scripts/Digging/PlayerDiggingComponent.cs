@@ -11,18 +11,16 @@ public class PlayerDiggingComponent : MonoBehaviour
     [SerializeField] private EventReference FMODEventReference;
     [SerializeField] private Vector3 VFXvelocityVector;
     [SerializeField] private Color VFXsecondaryColor;
-    [SerializeField] private float miningCooldown = 3f;
     [SerializeField] private int damage = 1;
     [SerializeField] private string animationName;
-    private float _timeFromLastHit;
     private VFXEventAttribute VFXEventAttribute;
+    private bool _canDig = true;
 
     private void Start()
     {
         if (!VFX) Debug.LogError($"No VFX found in {this}");
         else
             VFXEventAttribute = VFX.CreateVFXEventAttribute();
-        _timeFromLastHit = miningCooldown;
     }
 
     private void PlayVFX()
@@ -41,7 +39,7 @@ public class PlayerDiggingComponent : MonoBehaviour
 
     public bool TryDigObject(DiggingObjectComponent dugObjectComponent)
     {
-        if (CanDig())
+        if (_canDig)
         {
             if (playerAnimator)
                 playerAnimator.Play(animationName);
@@ -49,7 +47,7 @@ public class PlayerDiggingComponent : MonoBehaviour
             if (!FMODEventReference.IsNull)
                 RuntimeManager.PlayOneShotAttached(FMODEventReference, dugObjectComponent.gameObject);
             dugObjectComponent.Hit(damage);
-            StartCoroutine(StartCooldown());
+            _canDig = false;
             return true;
         }
 
@@ -58,21 +56,13 @@ public class PlayerDiggingComponent : MonoBehaviour
 
     public bool CanDigObject()
     {
-        return CanDig();
+        return _canDig;
     }
 
-    private IEnumerator StartCooldown()
+    public void AnimationEnded()
     {
-        _timeFromLastHit = 0f;
-        while (_timeFromLastHit <= miningCooldown)
-        {
-            _timeFromLastHit += Time.deltaTime;
-            yield return null;
-        }
+        _canDig = true;
     }
 
-    private bool CanDig()
-    {
-        return Mathf.Abs(_timeFromLastHit - miningCooldown) < 0.1;
-    }
+
 }
