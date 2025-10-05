@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     private Animator _playerAnimator;
     private DiggingObjectComponent _lastHitDiggingObjectComponent;
 
+    private RaycastHit _lastHitInfo;
     void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -138,6 +139,7 @@ public class PlayerController : MonoBehaviour
                 }
                 
                 _lastHitDiggingObjectComponent = hit.transform.gameObject.GetComponentInChildren<DiggingObjectComponent>();
+                _lastHitInfo = hit;
                 if (_lastHitDiggingObjectComponent)
                 {
                     var dug = _playerDiggingComponent.CanDigObject();
@@ -163,7 +165,7 @@ public class PlayerController : MonoBehaviour
 
     public void DiggingAnimationEnded()
     {
-        _playerDiggingComponent.TryDigObject(_lastHitDiggingObjectComponent);
+        _playerDiggingComponent.TryDigObject(_lastHitDiggingObjectComponent, _lastHitInfo);
     }
 
 

@@ -8,9 +8,8 @@ public class DiggingObjectComponent : MonoBehaviour
 {
     [SerializeField] private EScale scaleToReduce = EScale.Y;
     [SerializeField] private int objectHP = 10;
-    [SerializeField] private VisualEffect VFX;
-    [SerializeField] private Vector3 VFXvelocityVector;
-    [SerializeField] private Color VFXsecondaryColor;
+    [SerializeField] private ParticleSystem VFX;
+
     private GameObject _diggableObject;
     private float _baseScale = 0;
     private float _scaleReduceAmount;
@@ -45,27 +44,19 @@ public class DiggingObjectComponent : MonoBehaviour
 
         _scaleReduceAmount = _baseScale/(objectHP+1);
         Debug.Log($"Object {this} will reduce scale {scaleToReduce.ToString()} by {_scaleReduceAmount}");
-        if (!VFX) Debug.LogError($"No VFX found in {this}");
-        else
-            VFXEventAttribute = VFX.CreateVFXEventAttribute();
     }
 
-    private void PlayVFX()
+    private void PlayVFX(RaycastHit hitInfo)
     {
         if (!VFX) return;
-        // Set event data
-        VFXEventAttribute.SetFloat("size", Random.Range(0f, 1f));
-        VFXEventAttribute.SetVector3("velocity", VFXvelocityVector);
-        // Custom attribute: secondaryColor
-        VFXEventAttribute.SetVector3("secondaryColor",
-            new Vector3(VFXsecondaryColor.r, VFXsecondaryColor.g, VFXsecondaryColor.b));
-
-        // Data is copied from eventAttribute, so this object can be used again
-        VFX.SendEvent("OnPlay", VFXEventAttribute);
+        VFX.transform.position = hitInfo.point;
+        VFX.transform.rotation = Quaternion.LookRotation(hitInfo.normal);
+        VFX.Play();
     }
 
-    public void Hit(int dmg)
+    public void Hit(int dmg, RaycastHit hitInfo)
     {
+        PlayVFX(hitInfo);
         ObjectHit(dmg);
     }
 
@@ -93,7 +84,7 @@ public class DiggingObjectComponent : MonoBehaviour
     [ContextMenu("Test Me!")]
     private void TestHit()
     {
-        Hit(1);
+        Hit(1, new RaycastHit());
     }
 
     
@@ -124,7 +115,7 @@ public class DiggingObjectComponent : MonoBehaviour
 
     private void PlayDestroyVFX()
     {
-        PlayVFX();
+        // PlayVFX();
     }
 
     private void ReduceScale()

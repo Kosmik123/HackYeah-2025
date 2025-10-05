@@ -37,7 +37,7 @@ public class PlayerDiggingComponent : MonoBehaviour
         VFX.SendEvent("OnPlay", VFXEventAttribute);
     }
 
-    public bool TryDigObject(DiggingObjectComponent dugObjectComponent)
+    public bool TryDigObject(DiggingObjectComponent dugObjectComponent, RaycastHit hitInfo)
     {
         if (_canDig)
         {
@@ -46,7 +46,7 @@ public class PlayerDiggingComponent : MonoBehaviour
             PlayVFX();
             if (!FMODEventReference.IsNull)
                 RuntimeManager.PlayOneShotAttached(FMODEventReference, dugObjectComponent.gameObject);
-            dugObjectComponent.Hit(damage);
+            dugObjectComponent.Hit(damage, hitInfo);
             _canDig = false;
             return true;
         }
