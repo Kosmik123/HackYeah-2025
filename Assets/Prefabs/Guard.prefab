@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 51344811096640865}
   - component: {fileID: 7792015389479661496}
   - component: {fileID: 3542701255561288380}
+  - component: {fileID: 1458995269681914069}
   m_Layer: 0
   m_Name: Guard
   m_TagString: Untagged
@@ -224,18 +225,28 @@ MonoBehaviour:
     - rid: 8408759374236877078
     - rid: 8408759374236877058
   - conditions:
-    - rid: 8408759374236877075
-    - rid: 8408759374236877076
-    - rid: 8408759374236877080
+    - rid: 519199403777458243
+    - rid: 519199403777458245
     actions:
     - rid: 8408759374236877056
     - rid: 519199403777458262
     - rid: 519199403777458335
+    - rid: 519199407179825229
     - rid: 8408759374236877058
   currentActionIndex: -1
   references:
     version: 2
     RefIds:
+    - rid: 519199403777458243
+      type: {class: DayCondition, ns: , asm: Assembly-CSharp}
+      data:
+        conditionType: 1
+        day: 1
+    - rid: 519199403777458245
+      type: {class: HourCondition, ns: , asm: Assembly-CSharp}
+      data:
+        conditionType: 1
+        hour: 8
     - rid: 519199403777458262
       type: {class: StartDialogueAction, ns: , asm: Assembly-CSharp}
       data:
@@ -245,6 +256,9 @@ MonoBehaviour:
       type: {class: ShowScenarioObjects, ns: , asm: Assembly-CSharp}
       data:
         scenarioManager: {fileID: 0}
+    - rid: 519199407179825229
+      type: {class: InteractionUnlock, ns: , asm: Assembly-CSharp}
+      data: 
     - rid: 8408759374236877056
       type: {class: MoveAction, ns: , asm: Assembly-CSharp}
       data:
@@ -265,25 +279,26 @@ MonoBehaviour:
       data:
         conditionType: 1
         hour: 8.5
-    - rid: 8408759374236877075
-      type: {class: DayCondition, ns: , asm: Assembly-CSharp}
-      data:
-        conditionType: 1
-        day: 1
-    - rid: 8408759374236877076
-      type: {class: HourCondition, ns: , asm: Assembly-CSharp}
-      data:
-        conditionType: 1
-        hour: 8
     - rid: 8408759374236877078
       type: {class: WaitAction, ns: , asm: Assembly-CSharp}
       data:
         waitTime: 10
-    - rid: 8408759374236877080
-      type: {class: HourCondition, ns: , asm: Assembly-CSharp}
-      data:
-        conditionType: 0
-        hour: 6.1
+--- !u!114 &1458995269681914069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8088203896476555747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a6926035bf776c448791379c0832cdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GuardDetection
+  _player: {fileID: 0}
+  _guard: {fileID: 51344811096640865}
+  crank: {fileID: 0}
+  maxFailAmount: 3
 --- !u!1001 &5159291275707915975
 PrefabInstance:
   m_ObjectHideFlags: 0
