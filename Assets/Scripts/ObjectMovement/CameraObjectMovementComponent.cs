@@ -75,10 +75,10 @@ public class CameraObjectMovementComponent : MonoBehaviour
 
             if (_manipulatedObject.linearVelocity.magnitude > maxSpeed)
                 _manipulatedObject.linearVelocity = _manipulatedObject.linearVelocity.normalized * maxSpeed;
-            yield return null;
+            yield return new WaitForFixedUpdate();
         }
 
-        yield return null;
+        yield return new WaitForFixedUpdate();
     }
 
     [ContextMenu("ToggleCameraManipulation")]

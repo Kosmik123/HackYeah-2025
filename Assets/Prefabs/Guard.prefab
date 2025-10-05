@@ -138,7 +138,6 @@ GameObject:
   - component: {fileID: 51344811096640865}
   - component: {fileID: 7792015389479661496}
   - component: {fileID: 3542701255561288380}
-  - component: {fileID: 1458995269681914069}
   m_Layer: 0
   m_Name: Guard
   m_TagString: Untagged
@@ -225,8 +224,9 @@ MonoBehaviour:
     - rid: 8408759374236877078
     - rid: 8408759374236877058
   - conditions:
-    - rid: 8408759374236877083
-    - rid: 8408759374236877084
+    - rid: 8408759374236877086
+    - rid: 8408759374236877087
+    - rid: 8408759374236877088
     actions:
     - rid: 8408759374236877056
     - rid: 519199403777458262
@@ -237,16 +237,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 519199403777458243
-      type: {class: DayCondition, ns: , asm: Assembly-CSharp}
-      data:
-        conditionType: 1
-        day: 1
-    - rid: 519199403777458245
-      type: {class: HourCondition, ns: , asm: Assembly-CSharp}
-      data:
-        conditionType: 1
-        hour: 8
     - rid: 519199403777458262
       type: {class: StartDialogueAction, ns: , asm: Assembly-CSharp}
       data:
@@ -283,16 +273,21 @@ MonoBehaviour:
       data:
         conditionType: 1
         hour: 8.1
-    - rid: 8408759374236877083
-      type: {class: HourCondition, ns: , asm: Assembly-CSharp}
+    - rid: 8408759374236877086
+      type: {class: DayCondition, ns: , asm: Assembly-CSharp}
       data:
-        conditionType: 0
-        hour: 12
-    - rid: 8408759374236877084
+        conditionType: 1
+        day: 1
+    - rid: 8408759374236877087
       type: {class: HourCondition, ns: , asm: Assembly-CSharp}
       data:
         conditionType: 1
-        hour: 12.3
+        hour: 8
+    - rid: 8408759374236877088
+      type: {class: HourCondition, ns: , asm: Assembly-CSharp}
+      data:
+        conditionType: 0
+        hour: 6.11
 --- !u!1001 &5159291275707915975
 PrefabInstance:
   m_ObjectHideFlags: 0
