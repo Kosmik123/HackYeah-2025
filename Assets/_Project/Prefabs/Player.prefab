@@ -182,7 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   moveSpeed: 3
   jumpStrength: 1.5
-  rotationSpeed: 35
+  rotationSpeed: 0.4
   crouchHeight: 0.4
   standHeight: 1.6
   crouchCenterY: 0
