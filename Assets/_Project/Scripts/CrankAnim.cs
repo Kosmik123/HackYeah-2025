@@ -21,6 +21,8 @@ public class CrankAnim : MonoBehaviour
     public float rotation = 0.0f;
     public TargetScalePair[] targets;
 
+    private bool isPlaying = false;
+    
     void Awake()
     {
         anim = GetComponent<Animator>();
@@ -49,9 +51,16 @@ public class CrankAnim : MonoBehaviour
     public void MoveCrank()
     {
         anim.SetTrigger(Rotate);
-        if (_emitter.IsPlaying() == false)
+        if (isPlaying == false)
         {
             _emitter.Play();
+            isPlaying = true;
         }
+    }
+
+    public void StopCrank()
+    {
+        isPlaying = false;
+        _emitter.Stop();
     }
 }

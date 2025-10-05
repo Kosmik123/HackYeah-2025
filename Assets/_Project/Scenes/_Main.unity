@@ -620,6 +620,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test_Lvl
       objectReference: {fileID: 0}
+    - target: {fileID: 5290665343443311433, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 6.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5290665343443311433, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+      propertyPath: OverrideMinDistance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8156693790752191549, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.53174
