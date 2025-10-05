@@ -25,6 +25,8 @@ public class Guard : MonoBehaviour
     {
         splineAnimate.AnimationMethod = SplineAnimate.Method.Speed;
         splineAnimate.Container = spline;
+        if (speed <= 0)
+            speed = 5;
         splineAnimate.MaxSpeed = speed;
 
         splineAnimate.Restart(true);

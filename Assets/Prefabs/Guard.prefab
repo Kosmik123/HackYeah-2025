@@ -286,7 +286,7 @@ MonoBehaviour:
       type: {class: MoveAction, ns: , asm: Assembly-CSharp}
       data:
         spline: {fileID: 0}
-        moveSpeed: 6
+        moveSpeed: 5
     - rid: 8408759374236877113
       type: {class: WaitAction, ns: , asm: Assembly-CSharp}
       data:

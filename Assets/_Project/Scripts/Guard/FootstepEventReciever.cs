@@ -7,6 +7,7 @@ public class FootstepEventReciever : MonoBehaviour
     {
         guard = GetComponentInParent<Guard>();
     }
+
     public void OnFootstep()
     {
         guard.EmitFootstep();
