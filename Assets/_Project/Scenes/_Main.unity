@@ -945,6 +945,14 @@ PrefabInstance:
       propertyPath: scenarioManager
       value: 
       objectReference: {fileID: 2011151060}
+    - target: {fileID: 1028567501144364095, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.951
+      objectReference: {fileID: 0}
+    - target: {fileID: 1868336359219263255, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2549461397604300991, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
       propertyPath: m_Name
       value: Test_Lvl
