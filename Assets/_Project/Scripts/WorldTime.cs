@@ -4,7 +4,7 @@ namespace HackYeah2025
 {
     public partial class WorldTime : ScriptableObject
     {
-        public static event System.Action OnTimeChanged;
+        public event System.Action OnTimeChanged;
 
         public const float MinutesInHour = 60f;
         public const float HoursInDay = 24f;
@@ -45,12 +45,5 @@ namespace HackYeah2025
         }
 
         private void TimeChanged() => OnTimeChanged?.Invoke();
-
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-        private static void AfterSceneLoad()
-        {
-            if (instance == null)
-                CreateInstance();
-        }
     }
 }
