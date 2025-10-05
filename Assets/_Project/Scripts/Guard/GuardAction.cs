@@ -50,3 +50,16 @@ public class StartDialogueAction : GuardAction
         }
     }
 }
+
+[System.Serializable]
+public class ShowScenarioObjects : GuardAction
+{
+    [SerializeField] private OutlineScenarioManager scenarioManager;
+
+    public override UniTask Execute(Guard guard)
+    {
+        scenarioManager.ActivateScenario(ScenarioType.Room);
+        
+        return UniTask.CompletedTask;
+    }
+}
