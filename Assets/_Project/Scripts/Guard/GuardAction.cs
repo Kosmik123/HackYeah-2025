@@ -33,10 +33,12 @@ public class MoveAction : GuardAction
 {
     [SerializeField]
     private SplineContainer spline;
+    [SerializeField]
+    private float moveSpeed = 6;
 
     public override async UniTask Execute(Guard guard)
     {
-        await guard.MoveAlongSpline(spline);
+        await guard.MoveAlongSpline(spline, moveSpeed);
     }
 }
 
@@ -66,6 +68,16 @@ public class ShowScenarioObjects : GuardAction
     {
         scenarioManager.ActivateScenario(ScenarioType.Room);
         
+        return UniTask.CompletedTask;
+    }
+}
+
+[System.Serializable]
+public class InteractionUnlock : GuardAction
+{
+    public override UniTask Execute(Guard guard)
+    {
+        GameManager.Instance.InteractionBlocked = false;
         return UniTask.CompletedTask;
     }
 }

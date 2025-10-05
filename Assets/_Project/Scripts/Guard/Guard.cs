@@ -21,9 +21,12 @@ public class Guard : MonoBehaviour
     
     private Vector3 lastPosition;
 
-    public async UniTask MoveAlongSpline(SplineContainer spline)
+    public async UniTask MoveAlongSpline(SplineContainer spline, float speed)
     {
+        splineAnimate.AnimationMethod = SplineAnimate.Method.Speed;
         splineAnimate.Container = spline;
+        splineAnimate.MaxSpeed = speed;
+
         splineAnimate.Restart(true);
         OnPathStarted?.Invoke(this);
         await UniTask.WaitWhile(() => splineAnimate.IsPlaying);

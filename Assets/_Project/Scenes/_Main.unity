@@ -1314,6 +1314,10 @@ PrefabInstance:
       value: Assembly-CSharp ShowScenarioObjects
       objectReference: {fileID: 0}
     - target: {fileID: 3542701255561288380, guid: c764bb1ad219a714e95b2b1f59bb3681, type: 3}
+      propertyPath: 'managedReferences[519199407179825229]'
+      value: Assembly-CSharp InteractionUnlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542701255561288380, guid: c764bb1ad219a714e95b2b1f59bb3681, type: 3}
       propertyPath: managedReferences[519199403777458243].day
       value: 1
       objectReference: {fileID: 0}
@@ -1327,7 +1331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3542701255561288380, guid: c764bb1ad219a714e95b2b1f59bb3681, type: 3}
       propertyPath: behaviors.Array.data[1].actions.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3542701255561288380, guid: c764bb1ad219a714e95b2b1f59bb3681, type: 3}
       propertyPath: managedReferences[519199403777458245].hour
@@ -1351,6 +1355,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3542701255561288380, guid: c764bb1ad219a714e95b2b1f59bb3681, type: 3}
       propertyPath: 'behaviors.Array.data[1].actions.Array.data[3]'
+      value: 519199407179825229
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542701255561288380, guid: c764bb1ad219a714e95b2b1f59bb3681, type: 3}
+      propertyPath: 'behaviors.Array.data[1].actions.Array.data[4]'
       value: 8408759374236877058
       objectReference: {fileID: 0}
     - target: {fileID: 3542701255561288380, guid: c764bb1ad219a714e95b2b1f59bb3681, type: 3}
@@ -2885,6 +2893,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &708682570 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3635391936904326623, guid: 7d0a3e60719be0e4f9acf48be2e5894a, type: 3}
+  m_PrefabInstance: {fileID: 708682568}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef95ef1b111f674d9d35f85a8d5c517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UISystem
 --- !u!114 &725649638 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1668002080203191687, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
@@ -3035,37 +3054,25 @@ PrefabInstance:
       propertyPath: scenarioManager
       value: 
       objectReference: {fileID: 2011151060}
-    - target: {fileID: 1028567501144364095, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.668
-      objectReference: {fileID: 0}
-    - target: {fileID: 1028567501144364095, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.134
-      objectReference: {fileID: 0}
-    - target: {fileID: 1028567501144364095, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 1028567501144364095, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1028567501144364095, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 1028567501144364095, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1028567501144364095, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
     - target: {fileID: 2549461397604300991, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
       propertyPath: m_Name
       value: Test_Lvl
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267993204398589374, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+      propertyPath: m_Color.b
+      value: 0.15477037
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267993204398589374, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+      propertyPath: m_Color.g
+      value: 0.46809655
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267993204398589374, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8867924
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267993204398589374, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+      propertyPath: m_Intensity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7824646204274392084, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
       propertyPath: scenarioManager
@@ -3112,8 +3119,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 4915018177640591511, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
@@ -3400,6 +3406,7 @@ GameObject:
   - component: {fileID: 994097172}
   - component: {fileID: 994097174}
   - component: {fileID: 994097175}
+  - component: {fileID: 994097176}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3467,7 +3474,7 @@ Transform:
   m_GameObject: {fileID: 994097168}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.666161, y: 2.273, z: 3.990683}
+  m_LocalPosition: {x: 3.666161, y: 3.073, z: 3.990683}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3583,6 +3590,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
   nonRigidbodyVelocity: 0
   attenuationObject: {fileID: 0}
+--- !u!114 &994097176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994097168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 342d2342bf2d131429b055bc7af53c02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TooltipReceiver
+  uiSystem: {fileID: 708682570}
 --- !u!1001 &1043446541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4572,6 +4592,34 @@ PrefabInstance:
     - target: {fileID: 2080636076096208276, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489851008708079357, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.6658144
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489851008708079357, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4514854
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489851008708079357, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.11129379
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489851008708079357, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5043136
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489851008708079357, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.52614665
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489851008708079357, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.42723513
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489851008708079357, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5350773
       objectReference: {fileID: 0}
     - target: {fileID: 6519272701448509013, guid: cb5f2e223479da340ba63d3f4703c314, type: 3}
       propertyPath: fadeoutImage

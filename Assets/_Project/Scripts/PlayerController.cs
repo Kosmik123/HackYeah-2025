@@ -137,6 +137,11 @@ public class PlayerController : MonoBehaviour
 
     public void OnAttack(InputAction.CallbackContext context)
     {
+        if (GameManager.Instance.InteractionBlocked)
+        {
+            return;
+        }
+        
         if (context.performed)
         {
             var distance = _cameraObjectMovementComponent.GetMaxDistance();
