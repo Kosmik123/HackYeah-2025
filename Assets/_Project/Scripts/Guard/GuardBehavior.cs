@@ -28,7 +28,9 @@ public class GuardBehavior
         try
         {
             foreach (var action in actions)
-                await action.Execute(guard);
+                if (action != null) 
+                    await action.Execute(guard);
+
             OnFinished?.Invoke(this);
         }
         catch (System.Exception e)
