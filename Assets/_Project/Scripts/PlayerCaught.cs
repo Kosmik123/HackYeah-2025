@@ -12,6 +12,7 @@ public class PlayerCaught : MonoBehaviour
     [SerializeField] private float distanceToStop = 1f;
     [SerializeField] private SplineContainer ventSpline;
     [SerializeField] private Image FadeOutImage;
+    private GameObject _newSplineContainerObject;
 
     private void Start()
     {
@@ -25,21 +26,43 @@ public class PlayerCaught : MonoBehaviour
     [ContextMenu("Test")]
     public void PlayerCaughtInVent()
     {
+        int closestSplineIndex = 0;
+        float closestDistance = float.MaxValue;
+        float3 closestPoint = float3.zero;
+        float closestT = 0f;
         GetComponent<PlayerController>().enabled = false;
+        
         warden.transform.position = wardenWaitingPosition.transform.position;
-        var splineAnimate = GetComponent<SplineAnimate>();
-        splineAnimate.Container = ventSpline;
-        splineAnimate.Duration = playerPullingTime;
+        warden.transform.rotation = wardenWaitingPosition.transform.rotation;
+
+
         float3 nearest;
         float t;
-        SplineUtility.GetNearestPoint(ventSpline.Spline, transform.position, out nearest, out t);
+        for (int i = 0; i < ventSpline.Splines.Count; i++)
+        {
+            var spline = ventSpline.Splines[i];
+            SplineUtility.GetNearestPoint(spline, transform.position, out nearest, out t);
+            float dist = math.distance(nearest, transform.position);
+            if (dist < closestDistance)
+            {
+                closestDistance = dist;
+                closestSplineIndex = i;
+                closestPoint = nearest;
+                closestT = t;
+            }
+        }
+        var splineAnimate = GetComponent<SplineAnimate>();
+        var furtherIndex = closestSplineIndex == 0 ? 1 : 0;
+
+        ventSpline.RemoveSplineAt(furtherIndex);
+        splineAnimate.Container = ventSpline;
+        splineAnimate.Duration = playerPullingTime;
 
         // Move the animated object to the nearest point
-        splineAnimate.NormalizedTime = t;
+        splineAnimate.NormalizedTime = closestT;
         splineAnimate.Restart(false); // false = don’t reset time to 0
 
-        // Snap the GameObject to the spline
-        transform.position = nearest;
+        transform.position = closestPoint;
 
         // Optional: align to spline tangent
         //float3 tangent = SplineUtility.EvaluateTangent(ventSpline, t);
