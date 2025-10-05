@@ -10,22 +10,14 @@ public class OutlineScenarioObject : MonoBehaviour
     
     public void ShowOutline(bool show)
     {
-        if (outline == null && !show) return;
-        if (outline != null && show) return;
-
-        switch (show)
+        if (outline == null)
         {
-            case true:
-                outline = gameObject.AddComponent<Outline>();
-                outline.OutlineMode = mode;
-                outline.OutlineColor = color;
-                outline.OutlineWidth = width;
-                break;
-            case false:
-                Destroy(outline);
-                break;
+            outline = gameObject.AddComponent<Outline>();
         }
-        outline = GetComponent<Outline>();
+        outline.OutlineMode = mode;
+        outline.OutlineColor = color;
+        outline.OutlineWidth = width;
+        
         if (outline != null)
         {
             outline.enabled = show;

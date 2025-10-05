@@ -44,4 +44,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b60b3f5a7c502b419c50ae9711b37f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OutlineScenarioManager
-  Scenarios: []
+  Scenarios:
+  - ScenarioType: 1
+    ScenarioObjects:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - ScenarioType: 2
+    ScenarioObjects:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}

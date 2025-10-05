@@ -1,5 +1,38 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &412905566241758746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4762997288450377563}
+  m_Layer: 0
+  m_Name: Scenario zones
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4762997288450377563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412905566241758746}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 125036123712130689}
+  - {fileID: 155693256784007499}
+  m_Father: {fileID: 8156693790752191549}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &569179396336759934
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,6 +768,7 @@ Transform:
   - {fileID: 4325685942720587075}
   - {fileID: 8069745547045170508}
   - {fileID: 7559026153994822968}
+  - {fileID: 4762997288450377563}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2615332899199084732
@@ -2401,6 +2435,142 @@ Transform:
   - {fileID: 8918727780565860022}
   m_Father: {fileID: 3587807989680731267}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8274981830498564121
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 125036123712130689}
+  - component: {fileID: 8643804732820627886}
+  - component: {fileID: 634511872565105383}
+  m_Layer: 0
+  m_Name: Room scenario zone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &125036123712130689
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8274981830498564121}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.766, y: -2.541, z: -0.23473549}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4762997288450377563}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8643804732820627886
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8274981830498564121}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.6026218, y: 1.7798486, z: 2.466202}
+  m_Center: {x: 0.3013109, y: 0.18551946, z: 0.6951684}
+--- !u!114 &634511872565105383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8274981830498564121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 124091c06999f2548888a04f30f4a7b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScenarioChangeZone
+  scenarioManager: {fileID: 0}
+  zoneScenarioType: 1
+--- !u!1 &8825125020487357942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 155693256784007499}
+  - component: {fileID: 243539197701729315}
+  - component: {fileID: 7824646204274392084}
+  m_Layer: 0
+  m_Name: Cave scenario zone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &155693256784007499
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8825125020487357942}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.343, y: -2.541, z: -0.687}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4762997288450377563}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &243539197701729315
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8825125020487357942}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.6026218, y: 1.7798486, z: 2.466202}
+  m_Center: {x: 0.3013109, y: 0.18551946, z: 0.6951684}
+--- !u!114 &7824646204274392084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8825125020487357942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 124091c06999f2548888a04f30f4a7b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScenarioChangeZone
+  scenarioManager: {fileID: 0}
+  zoneScenarioType: 2
 --- !u!1 &8943791859149469607
 GameObject:
   m_ObjectHideFlags: 0
@@ -3429,7 +3599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4312734905464692184, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3456,9 +3626,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3b9a1a9ae4f7641954f615b8535d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OutlineScenarioObject
-  mode: 1
+  mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
-  width: 2
+  width: 8
 --- !u!4 &4173647065053482032 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3499922701833127778, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
@@ -3601,7 +3771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OutlineScenarioObject
   mode: 1
   color: {r: 0.62352943, g: 0.15686275, b: 0.15686275, a: 1}
-  width: 2
+  width: 8
 --- !u!4 &1028567501144364095 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d61cddef046260b4c83feeb761747561, type: 3}
@@ -3853,7 +4023,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8815887292423751678, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3880,9 +4050,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3b9a1a9ae4f7641954f615b8535d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OutlineScenarioObject
-  mode: 1
+  mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
-  width: 2
+  width: 8
 --- !u!4 &9135232019499211148 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8147999517765803332, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
@@ -4740,7 +4910,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4312734905464692184, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4767,9 +4937,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3b9a1a9ae4f7641954f615b8535d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OutlineScenarioObject
-  mode: 1
+  mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
-  width: 2
+  width: 8
 --- !u!4 &2931032074288486110 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3499922701833127778, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
@@ -5118,9 +5288,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3b9a1a9ae4f7641954f615b8535d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OutlineScenarioObject
-  mode: 1
+  mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
-  width: 2
+  width: 8
 --- !u!4 &3155706047063407806 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3499922701833127778, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
@@ -5184,7 +5354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5303432686095880534, guid: e284754fe6a01124ba2f8174cdd2fe65, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5211,9 +5381,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3b9a1a9ae4f7641954f615b8535d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OutlineScenarioObject
-  mode: 1
+  mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
-  width: 2
+  width: 8
 --- !u!4 &6459024041942292328 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4814984900115467244, guid: e284754fe6a01124ba2f8174cdd2fe65, type: 3}
@@ -5335,7 +5505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4312734905464692184, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5362,9 +5532,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3b9a1a9ae4f7641954f615b8535d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OutlineScenarioObject
-  mode: 1
+  mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
-  width: 2
+  width: 8
 --- !u!4 &3426212407648973027 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3499922701833127778, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
@@ -7608,9 +7778,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3b9a1a9ae4f7641954f615b8535d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OutlineScenarioObject
-  mode: 1
+  mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
-  width: 2
+  width: 8
 --- !u!4 &673321866197894675 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3499922701833127778, guid: 977479cc5340ddb4ba56ea1ecdf7ca5b, type: 3}
@@ -7770,7 +7940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8815887292423751678, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7797,9 +7967,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3b9a1a9ae4f7641954f615b8535d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OutlineScenarioObject
-  mode: 1
+  mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
-  width: 2
+  width: 8
 --- !u!4 &5340579738491559993 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8147999517765803332, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
@@ -9070,9 +9240,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3b9a1a9ae4f7641954f615b8535d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OutlineScenarioObject
-  mode: 1
+  mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
-  width: 2
+  width: 8
 --- !u!1001 &5111260508977249617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9645,7 +9815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OutlineScenarioObject
   mode: 1
   color: {r: 0.6226415, g: 0.15566038, b: 0.15566038, a: 1}
-  width: 2
+  width: 8
 --- !u!4 &5728145867474119213 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 59ad60e69e30cfc4884b805f5a578cef, type: 3}
@@ -9709,7 +9879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8815887292423751678, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9736,9 +9906,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3b9a1a9ae4f7641954f615b8535d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OutlineScenarioObject
-  mode: 1
+  mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
-  width: 2
+  width: 8
 --- !u!4 &4251436220820271736 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8147999517765803332, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
@@ -10224,9 +10394,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3b9a1a9ae4f7641954f615b8535d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OutlineScenarioObject
-  mode: 1
+  mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
-  width: 2
+  width: 8
 --- !u!4 &4504518853681691746 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8147999517765803332, guid: 62efa81d44bea8c4da0727a3dde075a4, type: 3}
@@ -10589,7 +10759,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5303432686095880534, guid: e284754fe6a01124ba2f8174cdd2fe65, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10621,9 +10791,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3b9a1a9ae4f7641954f615b8535d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OutlineScenarioObject
-  mode: 1
+  mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
-  width: 2
+  width: 8
 --- !u!1001 &6000100072389258405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11227,7 +11397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5303432686095880534, guid: e284754fe6a01124ba2f8174cdd2fe65, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11254,9 +11424,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3b9a1a9ae4f7641954f615b8535d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OutlineScenarioObject
-  mode: 1
+  mode: 0
   color: {r: 0.5660378, g: 0.11480955, b: 0.11480955, a: 1}
-  width: 2
+  width: 8
 --- !u!4 &1991258173101729705 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4814984900115467244, guid: e284754fe6a01124ba2f8174cdd2fe65, type: 3}
@@ -11641,7 +11811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OutlineScenarioObject
   mode: 0
   color: {r: 0.19591577, g: 0.38679248, b: 0.0784532, a: 1}
-  width: 2
+  width: 8
 --- !u!4 &3810739499090925388 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8002671330336711798, guid: e51fc584690db464bb9e2c1be1b37192, type: 3}
