@@ -1012,6 +1012,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test_Lvl
       objectReference: {fileID: 0}
+    - target: {fileID: 4267993204398589374, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+      propertyPath: m_Color.b
+      value: 0.15477037
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267993204398589374, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+      propertyPath: m_Color.g
+      value: 0.46809655
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267993204398589374, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8867924
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267993204398589374, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7824646204274392084, guid: b45184a4b9ea3214b95be126b90c1bf5, type: 3}
       propertyPath: scenarioManager
       value: 
